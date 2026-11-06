@@ -1,6 +1,7 @@
 {
-  "name": "courses-notes",
-  "version": "0.0.0",
+  "name": "fumadocs-template",
+  "description": "A Fumadocs template for generic use, with some additional plugins and custom components, created by @vonschappler",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "build": "fumadocs-mdx && next build",
@@ -65,6 +66,11 @@
     "tailwindcss": "4.3.3",
     "typescript": "6.0.3",
     "uuid": "14.0.2"
+  },
+  "author": {
+    "name": "von Schappler (Manoel Viturino)",
+    "email": "dev_vonschappler@outlook.com",
+    "url": "https://vonschappler.github.io"
   },
   "packageManager": "pnpm@11.22.0+sha512.1ff870c4c6133dfd88fb2afc46dd13d47f09c9794b438c6fdb47ca98caf3bc16381ee0be93a091b8e3824cf01f889f46d7d9e20910fb0be1ab0fb5baa80dd621"
 }
