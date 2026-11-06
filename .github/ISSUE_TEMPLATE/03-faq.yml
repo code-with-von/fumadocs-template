@@ -1,0 +1,87 @@
+name: FAQ
+description: Have a question? Use this to ask it!
+title: "[FAQ]: my question to von Schappler"
+assignees:
+  - vonschappler
+labels:
+  - faq
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > **Note**: Please don't change the title of the issue. It should remain as "[FAQ]: my question to von Schappler".
+        
+        Fill in the form below and **von Schappler** will add your question with this answer into the FAQ section of the README.md file of this project.
+  
+  - type: input
+    id: name
+    validations:
+      required: true
+    attributes:
+      label: '1. Name:'
+      placeholder: 'FirstName Last Name'
+      description: 'Please enter your name.'
+  
+  - type: input
+    id: email
+    validations:
+      required: true
+    attributes:
+      label: '2. Email:'
+      placeholder: 'your@email.com'
+      description: 'Please enter email.'
+  
+  - type: dropdown
+    id: type
+    validations:
+      required: true
+    attributes:
+      multiple: true
+      label: "3. Do you want your data to be kept anonymous?"
+      description: 'Selecting "Yes" will just ensure none of your personal information asked above will be shared in the public FAQ.'
+      options:
+        - "Yes (no data shared)"
+        - "Just name (your email will be listed)"
+        - "Just email (your name will be listed)"
+        - "No (both name and email will be listed)"
+      default: 0
+
+
+  - type: textarea
+    id: question
+    validations:
+      required: true
+    attributes:
+      label: "4. What's your question?"
+      placeholder: "Enter your question."
+      
+
+  - type: dropdown
+    id: contact
+    attributes:
+      description: Let us know if you want to be contacted directly about the progress of work into this.
+      label: "5. Do you want to be contacted when your question is answered?"
+      options:
+        - "No"
+        - "Yes"
+      default: 0
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## Terms:
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: '6. Agreement:' 
+      options:
+        - label: I have properly set my privacy settings by answering item (3) of this form.
+          required: true
+        - label: By selecting "Yes" in the item (5) of this form, I am hereby authorizing von Schappler to send me a notification with status of this request on the email provided.
+          required: true
+        - label: I understand that my request may take some time to be attended, and the proposal for improvements I suggested may not be accepted, hence not applied to the application. I also understand that as soon as the it'll be added to the FAQ, respecting the privacy settings selected on item (3) of this form.
+          required: true
