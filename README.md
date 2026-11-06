@@ -151,5 +151,26 @@ Inside our `package.json` file we provide some scripts to help managing this tem
     >$ pnpm format
     >```
 
+---
+
+## Submitting an Issues and Other requests for this project
+
+This project has custom forms for each different type of issue we are currently able to work at.
+
+To submit an issue, click on the **Issues** button above. That will open our **Issues page** where a green button **New issue** will be available. Click on it and select the appropriate option.
+
+### Got any questions?
+
+If you have any questions, feel free to submit them to the by selecting the **FAQ** option when creating a new issue, following the steps already indicated above.
+
+> [!note]
+> Questions received will be answered and added to this  the [FAQ](#faq) section of this file when possible.
+
+---
+
+## FAQ
+
+Questions and answers will be added here as they are received and answered.
+
 [^1]: The listed steps take under considerations that you have all the required knowledge to perform those steps - no external support will be provided over those, **unless you are a paying customer asking for teaching classes**.
 
