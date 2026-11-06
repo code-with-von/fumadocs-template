@@ -1,0 +1,112 @@
+name: Grammar, spelling and language improvements
+description: Did you found something that needs fix or improvement regarding the writing? Use this to make  your suggestions!
+title: "[Grammar Corrections]: your correction suggestion name here"
+assignees:
+  - vonschappler
+labels:
+  - grammar corrections
+  - triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > Provide as much details as possible about the problem(s) found, filling the fields below. The more details you provide, the easier it will be for us to fix them.
+  
+  - type: textarea
+    id: type
+    validations:
+      required: true
+    attributes:
+      label: "1. Which file(s) you found a problem?"
+      placeholder: Your answer here, following the model below...
+  
+  - type: markdown
+    attributes:
+      value: |
+        > Report Example:
+        >
+        > ```md
+        > ## Grammar / Spelling Errors Found
+        >
+        > - Section 1 (e.g. Table of Contents)
+        >    - Spelling error at the text "... abot ..." should be "... about ..." at paragraph 5 of the section.
+        >    - Line 10 is not clear as the most appropriated punctuation to it should contain a `.` instead of a `!`
+        > - Section 2 (e.g. Help / Live Editor)
+        >    - Line 30 looks like incomplete as it's missing detailed information
+        >
+        > ## Suggestions
+        >
+        > - Add a new section called "Contributing" to explain how to contribute to this project
+        > ```
+      
+
+  - type: textarea
+    id: error-correction
+    validations:
+      required: true
+    attributes:
+      label: "2. Please provide the details of the grammar / spelling errors found, with the proposed fix to them:"
+      description: "Provide detailed information about the errors found, so we can work on fixing them. Suggestions are also allowed to be provided, in case some of the writing can be improved."
+      placeholder: |
+        Please describe the errors found, following the example below:
+
+  - type: markdown
+    attributes:
+      value: |
+        > Report Example:
+        >
+        > ```md
+        > ## Grammar / Spelling Errors Found
+        >
+        > - Section 1 (e.g. Table of Contents)
+        >    - Spelling error at the text "... abot ..." should be "... about ..." at paragraph 5 of the section.
+        >    - Line 10 is not clear as the most appropriated punctuation to it should contain a `.` instead of a `!`
+        > - Section 2 (e.g. Help / Live Editor)
+        >    - Line 30 looks like incomplete as it's missing detailed information
+        >
+        > ## Suggestions
+        >
+        > - Add a new section called "Contributing" to explain how to contribute to this project
+        > ```
+
+  - type: dropdown
+    id: contact
+    attributes:
+      description: Let us know if you want to be contacted directly about the progress of work into this.
+      label: "3. Do you want to be contacted about this issue?"
+      options:
+        - "No"
+        - "Yes"
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: email
+    attributes:
+      label: "4. Email:"
+      description: If you select "Yes" above, please provide your email address so that we can contact you about this feature request.
+      placeholder: myemail@example.com
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: '5. Consent:' 
+      options:
+        - label: By selecting "Yes" on the item (3) and providing my e-mail on the item (4) of this form, I understand and allow von Schappler to contact me about this case.
+  
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## Terms:
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: '6. Agreement:' 
+      options:
+        - label: I agree that by submitting this report the information listed here are suggestions that aim to improve the application.
+          required: true
+        - label: I understand that my request may take some time to be attended, and the proposal for improvements I suggested may not be accepted, hence not applied to the application.
+          required: true
