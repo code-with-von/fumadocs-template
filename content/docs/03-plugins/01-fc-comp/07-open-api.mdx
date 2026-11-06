@@ -1,0 +1,265 @@
+---
+
+title: Open API
+description: A quick guide on how to document APIs
+icon: Server
+permission: dev
+
+---
+
+import { Folder, File, Files } from 'fumadocs-ui/components/files'
+import {APIPage} from '@components/api-page'
+
+Thanks to the integration to **Open Api**, it's possible to document apis properly using **Fumadocs**.
+
+Documenting an api requires the steps listed below.
+
+
+### 1. Folder / files structure
+
+Any and all **Apis** which will be documented, need to have their own api file.
+
+The api files should be placed inside the folder `/assets/`, separated by folders. The folder should have a list of files for each endpoint of the Api.
+
+<Files>
+  <Folder name="assets" defaultOpen>
+    <Folder name="example-api" defaultOpen>
+      <File name="api_endpoint_01.openapi.json" />
+      <File name="api_endpoint_02.openapi.json" />
+      <File name="... other files" />
+    </Folder>
+    <Folder name="another-example-api" defaultOpen>
+      <File name="api_endpoint_01.openapi.yaml" />
+      <File name="api_endpoint_02.openapi.yaml" />
+      <File name="... other files" />
+    </Folder>
+    <Folder name='... other folders / files' defaultOpen/>
+  </Folder>
+</Files>
+
+---
+
+### 1. Create the **openapi** file(s)
+
+The snippets of code below exemplifies how to use the **Open API** in both `JSON` and `YAML` syntaxes to create the `openapi` file needed to document the API:
+
+<Tabs items={['JSON format', "YAML format"]}>
+<Tab>
+  ```json title='example_01.openapi.json'
+  {
+    "openapi": "3.0.3",
+    "info": {
+      "title": "Hello API",
+      "description": "Defines an example “Hello World” API",
+      "version": "0.0.1"
+    },
+    "paths": {
+      "/": {
+        "get": {
+          "summary": "Say Hello",
+          "description": "Prints out a greeting",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "query",
+              "required": false,
+              "schema": {
+                "type": "string",
+                "default": "World"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/HelloResponse"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "HelloResponse": {
+          "description": "Response body",
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string",
+              "description": "Greeting",
+              "example": "Hello World!"
+            }
+          }
+        }
+      }
+    }
+  }
+  ```
+</Tab>
+<Tab>
+  ```yaml title='example_01.openapi.yaml'
+  openapi: 3.0.3
+  info:
+    title: Hello API
+    description: Defines an example “Hello World” API
+    version: "0.0.1"
+  paths:
+    "/":
+      get:
+        operationId: sayHello
+        summary: Say Hello
+        description: Prints out a greeting
+        parameters:
+        - name: name
+          in: query
+          required: false
+          schema:
+            type: string
+            default: "World"
+        responses:
+          "200":
+            description: Successful response
+            content:
+              "application/json":
+                schema:
+                  $ref: "#/components/schemas/HelloResponse"
+  components:
+    schemas:
+      HelloResponse:
+        description: Response body
+        type: object
+        properties:
+          message:
+            type: string
+            description: Greeting
+            example: Hello World!
+  ```
+</Tab>
+</Tabs>
+
+---
+
+### 1. Using the OpenAPI component in the MDX file
+
+After creating the **openapi** file with all the routes, possible example answers, and needed definitions, it's now possible to import and use the component that will render:
+
+- The **description** of the api method for the selected file (**remember that each file should handle only a single endpoint**)
+- The actual server which the API component is connected to (or a dropdown button that allows to select one of the defined services in case there is more than one server set inside the `server` property of the openapi file)
+- The **method** and **route** that is being called by the component
+- An **interactive button**, so the one reading the documentation can make calls to the selected url and check for expected responses, with a zone to display the results of the call
+- An **interactive query section**, where the params defined in the openapi file can be changed for testing it with other values
+- The **type definition** of the query parameters if the endpoint uses one and that is properly defined in the openapi file
+- A box with the most common used calls in various programming languages to help into making the request on a given application
+- The example of all possible answers if defined properly in responses property in the openapi file
+
+As listed above, the component is really detailed and offers many different levels of information and possibilities of interaction, depending mostly on how the openapi file that is being used by the component was defined and now that all the capabilities of this component was explained, it's time to showcase how this component is used:
+
+<Tabs items={["MDX", "Output"]}>
+<Tab>
+````mdx
+```mdx
+import {APIPage} from '@components/api-page'
+
+<Callout type='warning' title='NOTE'>
+  The examples below are fake and won't result on anything except for displaying how the component looks like!
+</Callout>
+
+<APIPage
+  file="path/to/openapi.json"
+  path="/api_endpoint"
+  method="api_method"
+/>
+
+---
+
+<APIPage
+  file="path/to/openapi.yaml"
+  path="/api_endpoint"
+  method="api_method"
+/>
+```
+````
+</Tab>
+<Tab>
+<Callout type='warning' title='NOTE'>
+  The examples below are fake and won't result on anything except for displaying how the component looks like!
+</Callout>
+
+<APIPage file="example-api/example_01.openapi.yaml" path="/" method="get" />
+
+---
+
+<APIPage file="example-api/example_01.openapi.json" path="/" method="get" />
+</Tab>
+</Tabs>
+
+<Callout type='error' title='IMPORTANT'>
+  As displayed in the snippet, the component can only render one **http method** per usage, which means that if the openapi file has various methods, those need to be either:
+  1. Defined in different openapi files and used properly per component call
+  2. Defined in the same openapi file (**recommended**, as this improves readability and organization of the files) and passing the correct `method` prop to the component.
+</Callout>
+
+---
+
+### 1. Page structure for documenting APIS
+
+Most importantly, when documenting API, we suggest that **in order to keep organization of your codebase**, you follow a similar folder structure to the one displayed below:
+
+<Files>
+  <Folder name="content" defaultOpen>
+    <Folder name="docs" defaultOpen>
+      <Folder name="API_01" defaultOpen>
+        <File name="endpoint-01.mdx" />
+        <File name="endpoint-02.mdx" />
+        <File name="index.mdx" />
+        <File name="... other files" />
+      </Folder>
+      <Folder name="API_02" defaultOpen>
+        <File name="endpoint-01.mdx" />
+        <File name="endpoint-02.mdx" />
+        <File name="index.mdx" />
+        <File name="... other files" />
+      </Folder>
+    </Folder>
+    <Folder name='... other folders / files' defaultOpen/>
+  </Folder>
+</Files>
+
+where, in the structure above, the `index.mdx` file should provide the needed information for the user to understand what is the actual intent of the **API** documented by the endpoint files used to explain each method of that endpoint file.
+
+In a realistic example, this is how the folder structure for the API documentation should look like:
+
+<Files>
+  <Folder name="content" defaultOpen>
+    <Folder name="docs" defaultOpen>
+      <Folder name="Twitch API" defaultOpen>
+        <File name="accounts.mdx" />
+        <File name="index.mdx" />
+        <File name="users.mdx" />
+        <File name="... other files" />
+      </Folder>
+      <Folder name="YouTube API" defaultOpen>
+        <File name="accounts.mdx" />
+        <File name="index.mdx" />
+        <File name="users.mdx" />
+        <File name="videos.mdx" />
+        <File name="... other files" />
+      </Folder>
+    </Folder>
+    <Folder name='... other folders / files' defaultOpen/>
+  </Folder>
+</Files>
+
+## What is next? [!toc]
+
+<Cards>
+  <Card href='https://learn.openapis.org/'>
+    Learn how to use OpenApi
+  </Card>
+</Cards>

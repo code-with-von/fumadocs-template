@@ -1,0 +1,15 @@
+# Tell pnpm to wait longer and retry aggressively on your network
+fetchTimeout: 300000
+fetchRetries: 5
+fetchRetryMaxtimeout: 120000
+
+shellEmulator: true
+
+allowBuilds:
+  '@infisical/cli': true
+  core-js: true
+  esbuild: true
+  sharp: true
+
+overrides:
+  mdast-util-to-markdown: 2.1.2

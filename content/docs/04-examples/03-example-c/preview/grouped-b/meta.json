@@ -1,0 +1,6 @@
+{
+  "title": "Some custom title",
+  "icon": "Search",
+  "defaultOpen": true,
+  "collapsible": false
+}

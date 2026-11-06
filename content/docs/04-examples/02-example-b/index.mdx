@@ -1,0 +1,60 @@
+---
+
+title: Example 02
+icon: BookOpen
+
+---
+
+import { Folder, File, Files } from 'fumadocs-ui/components/files'
+
+This example showcases the an example where we optionally can omit the **index** file which normally would open when expanding groups in the navigation.
+
+The suggested folder structure to be used in this case is something like:
+
+<Files>
+  <Folder name="content" defaultOpen>
+    <Folder name="docs" defaultOpen>
+      <Folder name="grouped-a" defaultOpen>
+        <File name="01-file-c.mdx" />
+        <File name="02-file-d.mdx" />
+        <File name="index.mdx" />
+      </Folder>
+      <Folder name="grouped-b" defaultOpen>
+        <File name="01-file-e.mdx" />
+        <File name="02-file-f.mdx" />
+        <File name="meta.json" />
+      </Folder>
+      <File name="01-file-a.mdx" />
+      <File name="02-file-b.mdx" />
+      <File name="index.mdx" />
+    </Folder>
+  </Folder>
+</Files>
+
+As everything in this example works as explained before in the previous page, there is no reason to repeat that explanation, so let't just add some small considerations to the **omitted index.mdx** file in the folder **grouped-b** and why avoid omitting it at the **root level** of **content/docs**:
+
+
+### 1. Omission of **index.mdx** in **content/docs**:
+If we don't add the **index.mdx** at the root of **content/docs**, accessing this URL will always return a broken route, in this case the usual 404 page or the custom one you have created (if you created one).
+
+---
+
+### 1. Omission of **index.mdx** in **grouped-b**:
+
+The omission the **index.mdx** file inside **grouped-b** will ONLY change the behavior of the referenced navigation item **(remember that each folder/file adds a navigation item into the project)**. 
+
+This means: clicking on the item, instead of both expanding a list with the nested pages while displaying the landing page of that nested group, it just expands the ne list of pages.
+
+So in this example the expected behaviors are:
+- [x] accessing the **/docs** route renders the **index.mdx** at the root level of **content/docs** folder
+- [x] clicking on the navigation bar under **grouped-a** will both load the **index.mdx** inside **grouped-a** and expand the navigation list showing the pages that **01-file-c.mdx** and **02-file-d.mdx** produce
+- [x] clicking on the navigation bar under **grouped-b** will ONLY expand the navigation list showing the pages that **01-file-e.mdx** and **02-file-f.mdx** produce
+
+<Callout title="NOTE">
+  You can omit the **index** file on any group to reproduce the same behavior when needed, but when doing so, the group can **ONLY** have a custom name and/or icon with the addition of the file **meta.json** - details about this file in the next section - in case this customization is needed.
+
+  - This is why in the folder example above we added that file.
+</Callout>
+
+
+A simulation of how the navigation looks like and navigation items behavior can be done clicking [here](02-example-b/preview), where the list of items nested inside navigation preview simulates the whole navigation if the files were structured as in the folder structured provided in this page.

@@ -1,0 +1,209 @@
+---
+
+title: Animated terminal
+description: A quick guide on how to use the animated terminal
+icon: Terminal
+permission: dev
+
+---
+
+import Terminal from "@components/ui/terminal"
+import { commands, outputLinks, outputs, username, subject, typingSpeed, initialDelay,delayBetweenCommands, clsDelay, restartDelay } from "@constants/terminalDocs.config";
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+The animated terminal was an adaptation from the downloadable component from [Aceternity UI](https://ui.aceternity.com/components/terminal). This adaptation initially may seem a bit complicated to use, but it has some cool features on it, being the biggest changes:
+
+1. Addition of a `cls` command to the terminal, responsible for cleaning the text on the terminal and restarting the whole animated text
+2. Possibility of adding "clickable links" as answers to the commands, which provide a more realistic experience, as modern terminals provide this feature.
+
+Below we provide the necessary explanation about how to use this component:
+
+### 1. Terminal props
+
+Due to the complexity of this component, below there is a list of all properties that need to be provided for the terminal to work properly. All properties are required, even if they have **null** as part of their internal values.
+
+<TypeTable
+  type={{
+    commands: {
+      description: 'The commands typed in the terminal',
+      type: 'string[]',
+      required: true
+    },
+    outputs: {
+      description: 'The outputs of the terminal',
+      type: '[key: number]: string[]',
+      required: true
+    },
+    outputLinks: {
+      description: 'The list of links to be used',
+      type: '[key: number]: (string|null)[] | null',
+      required: true
+    },
+    username: {
+      description: 'The username to be displayed in the terminal',
+      type: 'string',
+      required: true
+    },
+    subject: {
+      description: 'The word to be displayed next to the username in the terminal',
+      type: 'string',
+      required: true
+    },
+    typingSpeed: {
+      description: 'How fast the typing animation is rendered (milliseconds)',
+      type: 'number',
+      required: true
+    },
+    initialDelay: {
+      description: 'How many seconds before the animation starts (milliseconds)',
+      type: 'number',
+      required: true
+    },
+    delayBetweenCommands: {
+      description: 'Interval between commands typed (milliseconds)',
+      type: 'number',
+      required: true
+    },
+    clsDelay: {
+      description: 'Interval between the last command typed and the `cls` command (milliseconds)',
+      type: 'number',
+      required: true
+    },
+    restartDelay: {
+      description: 'How long the terminal takes to restart animation after `cls` is typed (milliseconds)',
+      type: 'number',
+      required: true
+    },
+  }}
+  
+/>
+
+---
+
+### 1. Creating the terminal
+
+The creation of the terminal depends on two steps:
+1. Create the file with the terminal definitions, passing all the props listed above and exporting those values in your preferred method
+2. Importing the component and providing all the props exported from the configuration file to the imported component.
+
+Below we have an example on how to use the terminal.
+
+<Tabs items={['Terminal configuration', 'MDX', 'Output']}>
+<Tab value="Terminal configuration">
+```js title='terminal.config.js'
+/**
+ * The list of commands  
+*/
+export const commands = ["pnpm add express", `pnpm add nodemon -D`, "pnpm dev"];
+
+/**
+ * The list of answers per command
+ * - 0: [] is the list of answers displayed between the 1st command and the next one on the list (same applies to all other inputs)
+*/
+export const outputs = {
+  0: ["Installing express...", "Express installed!"],
+  1: ["Installing nodemon...", "Nodemon installed!"],
+  2: ["Server is running on", "http://localhost:5000"],
+};
+
+/**
+ * The list of links per command, if the answer is expected to display links
+ * - 0: [] is the list of links displayed in the answers of the first command (same apply to all other inputs)
+*/
+export const outputLinks = {
+  0: null,
+  1: null,
+  2: [null, "http://localhost:5000"],
+};
+
+/**
+ * The name of the user to be displayed in the terminal
+*/
+export const username = "user";
+
+/**
+ * The subject to be displayed in the terminal, by the username
+*/
+export const subject = "subject";
+
+/**
+ * The animation speed for the typing animation
+*/
+export const typingSpeed = 50;
+
+/**
+ * The starting delay before the terminal is mounted or reset for start animating the first command
+*/
+export const initialDelay = 500;
+
+/**
+ * The delay between commands entry, after the replies to the command was displayed on the screen
+*/
+export const delayBetweenCommands = 800;
+
+/**
+ * The delay before typing the last command (this will always be the CLS command, used to clear the state of the terminal and restart the whole animation sequence)
+*/
+export const clsDelay = 10000;
+
+/**
+ * The delay between the command `cls` is typed on the terminal and the animation is restarted
+*/
+export const restartDelay = 1000;
+
+```
+</Tab>
+
+<Tab value="MDX">
+```mdx
+import {chart} from 'path/to/terminal.config.js'
+
+### Animated terminal preview
+<Terminal
+  commands={commands}
+  outputs={outputs}
+  outputLinks={outputLinks}
+  username={username}
+  subject={subject}
+  typingSpeed={typingSpeed}
+  initialDelay={initialDelay}
+  delayBetweenCommands={delayBetweenCommands}
+  clsDelay={clsDelay}
+  restartDelay={restartDelay}
+/>
+```
+</Tab>
+<Tab value="Output">
+  ### Animated terminal preview [!toc]
+  <Terminal
+    commands={commands}
+    outputs={outputs}
+    outputLinks={outputLinks}
+    username={username}
+    subject={subject}
+    typingSpeed={typingSpeed}
+    initialDelay={initialDelay}
+    delayBetweenCommands={delayBetweenCommands}
+    clsDelay={clsDelay}
+    restartDelay={restartDelay}
+  />
+</Tab>
+</Tabs>
+
+<Callout type='error' title='IMPORTANT'>
+  Not all properties need to be exported from the configuration file, but the ones not exported from it, need to be passed directly to the component, like in the example below:
+  ```mdx
+  <Terminal
+      commands={commands}
+      outputs={outputs}
+      outputLinks={outputLinks}
+      username={username}
+      subject={subject}
+      typingSpeed={50}
+      initialDelay={500}
+      delayBetweenCommands={800}
+      clsDelay={10000}
+      restartDelay={1000}
+    />
+  ```
+</Callout>

@@ -1,0 +1,29 @@
+---
+
+title: Zoomable Images
+description: A quick guide on how to add zoomable  images.
+icon: ZoomIn
+permission: dev
+
+---
+
+Because of our configuration, all images we link on our files will, by default, allow the zoom interactivity on them.
+
+So adding images in this project, just follows the normal **Markdown** syntax.
+
+<Callout type='error' title='IMPORTANT'>
+  Any **external** image resources should be placed inside the folder `/public/images` for this project before being imported in the documentation.
+</Callout>
+
+Below we have a example image added using the **Markdown** syntax, so it's possible to see how this component works.
+
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+````mdx
+![Alt text](/images/example.png)
+````
+</Tab>
+<Tab>
+![Alt text](/images/example.png)
+</Tab>
+</Tabs>

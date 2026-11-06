@@ -1,0 +1,216 @@
+/*
+  APPLIED_LINT_RULE by @vonschappler
+  biome-ignore-all lint/complexity/noImportantStyles: this is used as this comes from a 3rd party code
+*/
+
+@import "tailwindcss";
+@import "fumadocs-openapi/css/preset.css";
+@import "fumadocs-twoslash/twoslash.css";
+@import "@fumadocs/story/css/preset.css";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+@import "../assets/css/theme.css";
+
+html {
+  scrollbar-gutter: stable;
+}
+
+html > body[data-scroll-locked] {
+  margin-right: 0px;
+  --removed-body-scroll-bar-size: 0px;
+}
+
+* {
+  scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    @apply bg-transparent w-1.5 h-1.5;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-von-teal! rounded-lg!;
+  }
+}
+
+@theme {
+  --color-fd-background: #f5f5f5;
+  --color-fd-foreground: hsl(0, 0%, 3.9%);
+  --color-fd-muted: hsl(0, 0%, 96.1%);
+  --color-fd-muted-foreground: hsl(0, 0%, 45.1%);
+  --color-fd-popover: hsl(0, 0%, 98%);
+  --color-fd-popover-foreground: hsl(0, 0%, 15.1%);
+  --color-fd-card: hsl(0, 0%, 94.7%);
+  --color-fd-card-foreground: hsl(0, 0%, 3.9%);
+  --color-fd-border: hsla(0, 0%, 80%, 50%);
+  --color-fd-primary: hsl(0, 0%, 9%);
+  --color-fd-primary-foreground: hsl(0, 0%, 98%);
+  --color-fd-secondary: hsl(0, 0%, 93.1%);
+  --color-fd-secondary-foreground: hsl(0, 0%, 9%);
+  --color-fd-accent: hsla(0, 0%, 82%, 50%);
+  --color-fd-accent-foreground: hsl(0, 0%, 9%);
+  --color-fd-ring: hsl(0, 0%, 63.9%);
+}
+
+.dark {
+  --color-fd-background: hsl(0, 0%, 7.04%);
+  --color-fd-foreground: hsl(0, 0%, 92%);
+  --color-fd-muted: hsl(0, 0%, 12.9%);
+  --color-fd-muted-foreground: hsla(0, 0%, 70%, 0.8);
+  --color-fd-popover: hsl(0, 0%, 11.6%);
+  --color-fd-popover-foreground: hsl(0, 0%, 86.9%);
+  --color-fd-card: hsl(0, 0%, 9.8%);
+  --color-fd-card-foreground: hsl(0, 0%, 98%);
+  --color-fd-border: hsla(0, 0%, 40%, 20%);
+  --color-fd-primary: hsl(0, 0%, 98%);
+  --color-fd-primary-foreground: hsl(0, 0%, 9%);
+  --color-fd-secondary: hsl(0, 0%, 12.9%);
+  --color-fd-secondary-foreground: hsl(0, 0%, 92%);
+  --color-fd-accent: hsla(0, 0%, 40.9%, 30%);
+  --color-fd-accent-foreground: hsl(0, 0%, 90%);
+  --color-fd-ring: hsl(0, 0%, 54.9%);
+}
+
+strong {
+  @apply text-von-teal font-extrabold!;
+}
+
+a {
+  @apply transition-all duration-300;
+  :hover {
+    @apply text-von-teal;
+  }
+}
+
+h1,
+h2,
+h3 {
+  @apply font-von-title;
+}
+
+hr {
+  @apply border-von-teal/50;
+}
+
+.fd-theme-toggle,
+[class*="theme-toggle"],
+button[aria-label*="theme"],
+button[aria-label*="Theme"],
+.fd-sidebar button:last-child {
+  @apply hidden!;
+}
+
+.fd-step::before {
+  @apply bg-von-teal/25 flex items-center justify-center font-extrabold font-von-title text-lg border-von-teal/50! border-2;
+}
+
+/* Remove bullet point markers normally */
+li:has(input[type="checkbox"]),
+li:has(label > input[type="checkbox"]) {
+  @apply list-none;
+}
+
+/* Force the checkbox to behave as an inline graphic within the text flow */
+ul > li input[type="checkbox"] {
+  @apply appearance-none h-4 w-4 shrink-0 rounded-full border inline-block transition-colors;
+  @apply bg-von-teal/25 border-von-teal/25;
+  @apply align-middle mr-1.5 mb-0.5 relative;
+}
+
+ul > li input[type="checkbox"]:checked {
+  @apply bg-von-teal border-von-teal;
+}
+
+/* Checked box icon centered absolutely inside the inline checkbox container */
+ul > li input[type="checkbox"]:checked::before {
+  /* Using Tailwind's arbitrary value syntax [clip-path:...] to embed the polygon */
+  @apply bg-von-black content-[''] check-checked;
+  @apply absolute top-1/2 left-1/2 w-2 h-2 -translate-x-1/2 -translate-y-1/2;
+}
+
+a[data-active="true"] {
+  @apply text-von-teal/75 font-von-title bg-von-teal/15 font-bold transition-all duration-500;
+  &:before {
+    @apply bg-von-teal;
+  }
+  &.prose {
+    @apply bg-transparent border-none;
+    max-width: 100% !important;
+  }
+}
+
+[data-header-body] {
+  @apply border-none w-full;
+}
+
+/* 1. Expand the overall Fumadocs layout width to 100% */
+:root {
+  --fd-layout-width: 100% !important;
+}
+
+/* 2. Make the main content area occupy all available space */
+#nd-docs-layout,
+[data-docs-layout] {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* 3. Remove max-width caps on the page body so content fills the red box */
+#nd-page {
+  & *:not(.twoslash-completion-list) {
+    max-width: 100% !important;
+    width: full !important;
+  }
+}
+
+footer {
+  @apply border-t py-4 flex-col md:flex-row;
+  & hr {
+    @apply border-von-gray/25 mb-2;
+  }
+  & .footer-link {
+    @apply dark:text-von-gray/75 hover:dark:text-von-white text-von-black/65 hover:text-von-black scale-95 transition-all duration-300 hover:scale-115;
+  }
+}
+
+/* h3 {
+  @apply text-xl font-bold transition-all duration-300 ease-in-out md:text-3xl;
+} */
+
+[role="tabpanel"] {
+  @apply bg-transparent p-0;
+  & > figure:only-child {
+    @apply m-0! p-0!;
+  }
+}
+
+pre > code > span.line {
+  @apply text-pretty! overflow-x-hidden max-w-full;
+}
+
+[id$="-content-output"] {
+  @apply bg-transparent p-4;
+}
+
+#nd-sidebar,
+#nd-sidebar-mobile {
+  @apply w-fit border-von-teal/25;
+  &[data-collapsed="true"] {
+    @apply bg-von-black/65 border-0;
+    &[data-hovered="true"] {
+      @apply border;
+    }
+  }
+  &[data-collapsed="false"] {
+    @apply bg-von-black!;
+  }
+  &[data-state="open"] {
+    @apply bg-von-black/65;
+  }
+}
+#nd-subnav {
+  @apply bg-transparent;
+}
+
+section.footnotes {
+  & ol {
+    @apply text-sm font-light text-von-gray;
+  }
+}

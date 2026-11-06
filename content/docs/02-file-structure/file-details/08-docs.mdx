@@ -1,0 +1,166 @@
+---
+
+title: Documentation files
+icon: Files
+
+---
+
+import {Folder, File, Files} from 'fumadocs-ui/components/files'
+
+This is where the main reason of this project, to help **developers** into creating a pretty, consistent and reliable documentation for their projects (personal or professional), while with the help of **Fumadocs** and the **MDX** syntax.
+
+This is then where the whole **magic happens**, as most developers are already used to write files into their repositories, such as:
+- Readme.md;
+- License;
+- TODO.md; and many others - the list is really BIG 
+
+or even writing their documentation using **Wiki based** format, just like **I also have done, and still have examples of** using **GithubWiki** for free repositories.
+
+In this section, I won't be entering in details about **MDX**, but explain how to proper structure your files and folders for documenting your project.
+
+### 1. The content/docs folder
+
+This folder is where all of your files with the extension **mdx** need to be placed. As I said before I won't enter into details, but in order to use (not only **this template** but) **Fumadocs**, all files that represent a documentation information (which will always be accessible by the **your.host/docs**) need to be stored here and follow this specific format:
+
+- [x] The page definition (at the top level using the **YAML front matter syntax**)
+- [x] List of imports (**if needed**) - you can (should be able to) import here anything that is needed as long it's on **js/jsx/ts/tsx** format
+- [x] The content of the page, using the **markdown / mdx syntax**
+
+Alongside the **required** format for each individual file on this folder, there are some other improvements that can be done:
+
+- [x] The addition of a **index.mdx** file (following all of the above) - optional
+- [x] The use of a **meta.json** file to customize even more navigation, behavior and other features on the navigation element of the **/docs** route - optional
+
+There is a dedicated set of examples into the **Document examples** section, so feel free to check those after you have gone through all details listed here!
+
+---
+
+### 2. Ways of documenting your codebase
+
+The way this project/template was created, suggests two different ways of documenting your code. **ungrouped** and **grouped**, which the only diference between those is how they **behave** on the user interaction.
+
+<Callout type='warn' title='ATTENTION'>
+  Both **grouped** and **ungrouped** ways of documenting your project can use a **key file** named **meta.json**.
+
+  **Fumadocs** uses this file apply the settings defined into this file to customize furthermore both the **behavior** and the **look and feel** of your documentation.
+
+  It's **important** to note that if you are using the **grouped documentation**, to each individual group you wish to further customize **MUST HAVE** their own **meta.json** file, specially because with this file it's even possible to **force** specific files to be displayed in a different order in the **navigation bar** rendered!
+</Callout>
+
+#### 1. Grouped documentation
+Grouped documentation is useful when we have the desire to structure our documentation navigation based on how files correlate with each other.
+
+This is done by creating a new folder inside the **content/docs** folder - the deeper the level, the more sub-routes you have, eg:
+
+- **content/docs/folder-a/file-1** will be accessible at **your.host/docs/folder-a/-file-1**
+- **content/docs/folder-a/subfolder-b/subfolder-c/file-2** will be accessible at **your.host/docs/folder-a/subfolder-b/subfolder-c/file-2**
+
+And it's important to bring awareness about this, because this changes how internal links between different pages are done!
+
+Below there is a simple representation on how to place files correctly in order to use this kind of grouped structure:
+
+<figure>
+<Files>
+  <Folder name="docs" defaultOpen>
+    <Folder name="01-group-01" defaultOpen>
+      <File name="01-g01-doc-file-01.mdx" />
+      <File name="02-g01-doc-file-02.mdx" />
+      <File name="03-g01-doc-file-03.mdx" />
+      <File name="..." />
+      <File name="index.mdx" />
+      <File name='meta.json' />
+    </Folder>
+    <Folder name="02-group-02" defaultOpen>
+      <File name="01-g02-doc-file-01.mdx" />
+      <File name="02-g02-doc-file-02.mdx" />
+      <File name="03-g02-doc-file-03.mdx" />
+      <File name="..." />
+      <File name='meta.json' />
+    </Folder>
+  <File name="index.mdx" />
+  </Folder>
+</Files>
+<figcaption>
+Folder structure for the **grouped** documentation model, relative from the **content** folder.
+- [x] files **meta.json** and **index.mdx** inside groups are optional
+</figcaption>
+</figure>
+
+<Callout type='warn' title='ATTENTION'>
+  There are a few things to note about this documentation structure:
+  1. If a group folder has no **index.mdx**, clicking on the navigation will open an accordion with the list of files in that folder
+      - you can have a **index** file with a different name, for that it's necessary to add the **meta.json** file and make use of the correct configuration to change the default **pageIndex** for that specific group / folder
+  2. If the group folder has the **index.mdx** (default or custom), clicking on the navigation will load the defined **index** AND open the accordion with the list of files in that group / folder
+</Callout>
+---
+
+#### 1. Ungrouped documentation
+
+Ungrouped documentation is useful when documenting simple projects or the files used for documenting do not have a specific relation one ot the other.
+
+In this case, all files are placed directly at the root level of the **content/docs** folder. This is the most common use case of fumadocs when working with documentation, for being simple and straight forward.
+
+The typical folder structure for this model of documentation is displayed below:
+
+<figure>
+<Files>
+  <Folder name="docs" defaultOpen>
+    
+      <File name="01-doc-file-01.mdx" />
+      <File name="02-doc-file-02.mdx" />
+      <File name="03-doc-file-03.mdx" />
+      <File name="index.mdx" />
+      <File name="..." />
+      <File name='meta.json' />
+    </Folder>
+</Files>
+<figcaption>
+Folder structure for the **ungrouped** documentation model, relative from the **content** folder.
+- [x] file **meta.json** is optional
+</figcaption>
+</figure>
+
+### 3. Naming conventions
+
+This template also suggests a **naming convention** as a way to help into ordering how the document pages are listed in the navigation bar that is rendered on any **/docs** route of the application.
+
+The **naming convention** suggested is pretty simple:
+- [x] a number with 1, 2, 3, 4 (or as many digits you need) - depends on your need / how many files you'll create
+- [x] the name of the file + the extension **mdx**
+- [x] names **cannot** contain any **special characters**, **spaces** or **underscores** and should be always **lower case** (this is the main definition of any slug at the internet, as those **file names need to follow this convention** as they'll be converted into **slugs**, for easy navigation)
+- [x] if/when creating a group (folder) of correlated files, the same convention still applies, but without the extension **mdx**
+
+By inspecting the codebase for the **/content/docs** folder, it's possible to see examples of how this convention is used.
+
+<Callout title='NOTE'>
+  As indicated above, even if the files follow the suggested naming convention, the use of the file **meta.json** inside a group of files will overload the order, listing them into the order you list them into the **meta.json** file.
+</Callout>
+
+---
+
+### 4. The YAML front matter custom permission: **dev** in files
+
+This is was a feature added in this template, to ensure the users can create their on temporary pages before those can be deployed into production by adding:
+
+```yaml
+permission: dev
+```
+
+at the top level of any files created inside the folder **/content/docs** (or inside their subfolders), for example:
+
+```mdx
+---
+
+title: Your page title
+description: Your description 
+icon: Your Icon 
+permission: dev
+
+---
+```
+
+---
+
+### 5. Documentation files examples
+
+If you want to se practical examples over how to properly document your project, check the session **Document examples**, on navigation bar.

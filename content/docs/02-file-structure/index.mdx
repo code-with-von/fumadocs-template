@@ -1,0 +1,114 @@
+---
+
+title: File/Folder structure
+icon: Folder
+
+---
+
+import {Folder, File, Files} from 'fumadocs-ui/components/files'
+
+<Callout title='NOTE'>
+  #### Before you begin
+  You can delete the folder **04-examples** as it should not part of your project!
+  - [x] another option is to add the **permission: dev** to the **YAML front matter** in all files from this folder, to keep them as a reference for your project
+  
+  This folder is just here to help you understand how the documentation structure works.
+</Callout>
+
+
+Regardless of how many files your final project needs, here there will be a list of the files that could be changed safely for you, **as the user**, change without breaking how this template works.
+
+### 1. Files/Folder List
+
+The list of files below represent the list of files that should be changed for you to use this template as you see fit.
+
+<Callout type='error' title='IMPORTANT'>
+  Other files not listed here, can still be changed, but changes done are **at your own risk** and should be done based on the required knowledge to change them.
+  
+   The folder structure lists files here are files that can be changed within this template without any further complications, as long as **official Fumadocs** documentation is being followed (or if using any of the [custom components](/docs/dev-only/02-components) provided are done by their specs).
+  
+  - All files listed are based on the root folder of the project!
+</Callout>
+
+<Files>
+  <Folder name=".github" defaultOpen>
+    <Folder name="workflows" defaultOpen>
+      <File name="checks.yml" />
+      <File name="deploy.yml" />
+      <File name="..." />
+    </Folder>
+  </Folder>
+    <Folder name='app' defaultOpen>
+      <Folder name='(home)' defaultOpen>
+        <Folder name='a-link' defaultOpen>
+          <File name="page.jsx" />
+        </Folder>
+        <File name="layout.tsx" />
+        <File name="page.tsx" />
+      </Folder>
+      <File name="globals.css" />
+      <File name="icon.png" />
+      <File name="layout.tsx" />
+      <File name="global-not-found.tsx" />
+      <File name="..." />
+    </Folder>
+    <Folder name='assets' defaultOpen>
+      <File name="..." />
+    </Folder>
+    <Folder name='components' defaultOpen>
+      <Folder name='custom' defaultOpen>
+        <File name="custom_component.jsx" />
+        <File name="another_custom_component.tsx" />
+        <File name="..." />
+      </Folder>
+      <File name="..." />
+    </Folder>
+    <Folder name='constants' defaultOpen>
+      <File name="global_constant_01.js" />
+      <File name="global_constant_02.jsx" />
+      <File name="global_constant_03.ts" />
+      <File name="global_constant_04.tsx" />
+      <File name="..." />
+    </Folder>
+    <Folder name='content' defaultOpen>
+      <Folder name='docs' defaultOpen>
+        <Folder name='doc_meta' defaultOpen>
+          <File name="file_01.mdx" />
+          <File name="file_02.mdx" />
+          <File name="meta.json" />
+        </Folder>
+        <Folder name='doc_meta_index' defaultOpen>
+          <File name="file_01.mdx" />
+          <File name="file_02.mdx" />
+          <File name="index.mdx" />
+          <File name="meta.json" />
+        </Folder>
+        <Folder name='doc_no_meta' defaultOpen>
+          <File name="file_01.mdx" />
+          <File name="file_02.mdx" />
+        </Folder>
+        <Folder name='doc_no_meta_index' defaultOpen>
+          <File name="file_01.mdx" />
+          <File name="file_02.mdx" />
+          <File name="index.mdx" />
+        </Folder>
+        <Folder name='...' defaultOpen/>
+      </Folder>
+      <File name="index.mdx" />
+    </Folder>
+    <Folder name='public' defaultOpen>
+      <File name="file_exposed_to_client_01.ext01" />
+      <File name="file_exposed_to_client_02.ext02" />
+      <Folder name="organized_folder_01" defaultOpen>
+        <File name="file_exposed_to_client_03.ext03" />
+        <File name="file_exposed_to_client_04.ext04" />
+      </Folder>
+    </Folder>
+    <Folder name='ui' defaultOpen>
+      <File name='ui_component.jsx' />
+      <File name='another_ui_component.tsx' />
+      <File name="..." />
+    </Folder>
+    <File name='.env.example' />
+    <File name='...' />
+</Files>

@@ -1,0 +1,171 @@
+---
+
+title: Repository / Codebase documentation files
+description: This lists files used for a "dev-to-dev" communication
+icon: BookOpenText
+
+---
+
+One of **my** biggest struggle was to define the line of what **is the project documentation** and what is the **repository documentation**.
+
+If you **also** struggle with this, let's try to make it simple:
+
+- **project documentation** is the set of instructions to the **end-user**
+- **repository documentation** is the way where developers talk "each other"
+
+Even after so **many** years working with development, someone may still (and will) struggle with this, as new ways of **communicating** your thoughts to your team changes with time...
+
+- before just a simple comment into the code (like the one below) was more than enough...
+```c title='file_with_comment.c'
+/*
+  Variable to store age
+  (and this kind of comment was NEVER NEEDED before
+  - the name of the variable and it's type should explain itself)
+*/ 
+int age = 25; 
+```
+- today we have: **JavaDocs**, **PyDocs**, **JsDocs**, and many others (alongside to the comments we add into our code and **NO ONE READS** - except by the one who wrote the code...)
+
+<Callout title="NOTE">
+  Into this aspect (**communication**), you, if you reach to this place, have no idea on the problems I had to deal with because how bad **documentation** is everywhere.
+
+  - Lib **x** uses **y** dependencies, but **y** docs are not updated to the need of **x** then lots of conflicts start to happen...
+</Callout>
+
+Today, communication is a lot harder. It feels like:
+- [x] **fellow developers** don't know what you are doing / why you are doing if you don't specify 100% of your thoughts
+- [x] "git" was added
+- [x] tools to "track" your progress were added
+- [x] the extensive use of AI by **wondering developers** (I can make this because I can use Ai and I don't need to learn anything) makes it feels like no hard we explain, people don't understand
+
+and the list above can grow into unimaginable situations I have dealt with.
+
+It does not matter how hard **I work** (and before you get here saying I should stop doing what I do and just use **Ai** myself or forget about important concepts that any developer with **20+** years of experience in the field) - sit on my **own chair** and imagine the mess we already today, before **judging me**.
+
+The main point, is not to be **a critical person**, but to try to help people to deal with the problems I deal everyday.
+
+That is why some specific files, thinking **specifically** in how **Git** works (at least on the cloud side - at least for **Github**) that this section exists.
+
+
+Those files are mainly:
+
+### 1. Changelog.md
+
+This is the file where we list (with short descriptions) changes done into the project.
+
+This is a simple **Markdown file** but with a specific structure (that I always used and has proven to be efficient so far), when it comes to this kind of functionality.
+
+Bellow we provide an example of how this file should be structured:
+
+```md title='Changelog.md'
+# Changelog:
+
+## YYYY-MM-DD:
+
+<!-- changes done by github_username_1 -->
+<details>
+<summary>`@github_username_1`</summary>
+
+<!-- Markdown to detail the changes done with the update done at YYYY-MM-DD by github_username_1 -->
+
+
+</details>
+
+<!-- changes done by github_username_2 on the same date -->
+<details>
+<summary>`@github_username_2`</summary>
+
+<!-- Markdown to detail the changes done with the update done at YYYY-MM-DD by github_username_2 -->
+
+
+</details>
+
+---
+
+<!-- the same template changes that are in a different date -->
+## YYYY-MM-DD:
+
+<details>
+<summary>`@github_username_1`</summary>
+
+<!-- Markdown to detail the changes done with the update done at YYYY-MM-DD by github_username_1 -->
+
+
+</details>
+
+...
+
+```
+
+---
+
+### 2. The **License** file(s)
+
+These files specify regulations about the actual project used. You can create those based on your project references, but **there are some templates** that **I** use available [here](#update/link/to/repo).
+
+Templates not provided above are not **used by me**, so if you need something else, please let us know or make use of the pre-defined templates provided by your **Git** cloud provider when creating a new repository.
+
+---
+
+### 3. CONTRIBUTING.md
+
+Most of the times, when working with **contributors**, this file may or not pe part of your **repository documentation files**. This file is most commonly found in open source projects, as most of the needed rules for private projects are already defined by the **License files**.
+
+> **I**, normally for working without any contributors, don't add this to my projects, but you are free to create your own **CONTRIBUTING.md** file, based on your needs.
+
+<Callout title='NOTE'>
+
+**Github** repositories usually follow [this template](https://github.com/contribute-md/contribute-md-template/blob/master/contribute.md) - with  **per-need** changes and adaptations, when adding this file their projects.
+
+</Callout>
+
+---
+
+### 4. TODO.kanban.md
+
+This here is a really controversial file. While I like to have the level of control this file provides me, other users may not like because of many reasons.
+
+But if you are **willing to test it out**, check the list of extensions suggested by this project, install them and have your time **playing** and testing with both the **extension** and the file **TODO.kanban.md** file that is part of this project.
+
+There won't be many details about this file.
+
+---
+
+### 5. Readme file(s)
+
+Let's start by this - there is not only a single **README.md** file, as the title of this section says, there can be more than one.
+
+Usually this is how **I** work:
+- a single **README.md** when creating a blank project from scratch
+- a **README.md** file (with the project details) and a **README.original.md** file with the contents of the original code the file that comes from default when bootstrapping an application using **commands**, eg, if using:
+
+```npm
+npx create vite@latest
+```
+as that command will create a set of files including a **README.md**, which I like to have as backup before changing the contents.
+
+Having multiple **README** files is optional, but that is how I saw it's the best when you need to provide additional information to the project but still wants to preserve the original file.
+
+---
+
+### 6. Extra: "in-line / comments based" documentation
+
+Before anything, this is not the same as creating any "type safety" environment. This is the same as providing enough details to anyone reading your code for them to understand **what**, **why**, **when**, **how** and **dependencies list** for anything and everything on your codebase.
+
+Even though, that is not **a common practice** that **I find** in codebases when inspecting them, this should still be used and when I work into projects I wish to share or project that others work alongside me, **I make sure to enforce** adding those to the code.
+
+From **my** side, for using **JavaScript** in the majority of my projects, that would be done using **JavaScript** syntax for comments and [**JsDocs**](https://jsdoc.app/) syntax in order to help other users not only to read the code, but also to ensure that **Intellisense** on our **IDE** can provide the best code completion with the needed information when other **developers** are using the functions / methods / classes (or anything that is part of the codebase) as seamless as it can be.
+
+<Callout type='error' title='IMPORTANT'>
+  At this point, **I** am 100% aware that not all files are documented yet, meaning that some **conflicts of idea** may (and will) be exist in this project. Remember that:
+  - this project works on a already defined base, and it's not my role to document the base provided
+  - additional files created may not be documented properly using inline code, but **there are plans** to fix that in future releases of this project. 
+  
+  If something is missing, contact [us](mailto:dev_vonschappler@outlook.com) so we can add[^1] what is missing, so can implement that as we progress with other updates.
+</Callout>
+
+The strategy used to make this kind of documentation, depends on the team, needs of the project, programming language used, common **extensions** shared with all the involved, and many other factors, that if **I** would list here, would just make this hard to follow.
+
+The specification on how this type of documentation should be detailed either in the **CONTRIBUTING.md** or in the **README.md** file, as a set of **guidelines** to be followed by any **developers working in the project**.
+
+[^1]: As this project is maintained by a single person, requests done does not mean instant updates.

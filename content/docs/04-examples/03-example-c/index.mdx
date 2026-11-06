@@ -1,0 +1,99 @@
+---
+
+title: Example 03
+icon: BookOpen
+
+---
+
+import { Folder, File, Files } from 'fumadocs-ui/components/files'
+
+This example showcases the example where where we are customizing the navigation metadata, with the help of the file **meta.json**,
+
+This file can be used for many different types of customization and this example listing will explain the **most common use-cases** of this file.
+
+The suggested folder structure to be used in this case is something like this:
+
+<Files>
+  <Folder name="content" defaultOpen>
+    <Folder name="docs" defaultOpen>
+      <Folder name="grouped-a" defaultOpen>
+        <File name="01-file-c.mdx" />
+        <File name="02-file-d.mdx" />
+        <File name="index.mdx" />
+        <File name="meta.json" />
+      </Folder>
+      <Folder name="grouped-b" defaultOpen>
+        <File name="01-file-e.mdx" />
+        <File name="02-file-f.mdx" />
+        <File name="meta.json" />
+      </Folder>
+      <Folder name="grouped-c" defaultOpen>
+        <File name="01-file-g.mdx" />
+        <File name="02-file-h.mdx" />
+        <File name="index-custom.mdx" />
+        <File name="meta.json" />
+      </Folder>
+      <File name="01-file-a.mdx" />
+      <File name="02-file-b.mdx" />
+      <File name="03-hidden.mdx" />
+      <File name="index.mdx" />
+    </Folder>
+  </Folder>
+</Files>
+
+
+### 1. Change the order of the pages, hide pages or force them to be displayed
+
+This use case is represented by the file **content/docs/grouped-a/meta.json** file, provided below.
+
+```json
+{
+  "pages": ["03-hidden", "02-file-b", "..."]
+}
+```
+
+That file would force the file "03-hidden** to be displayed", before the **01-file-a** and not listing the file **02-file-b** in the navigation bar.
+
+
+<Callout title='NOTE'>
+- It's possible to add to the listing above the index file, but by doing so, this will cause for nested grous the same behavior as if the grouped folder has no **index.mdx** file.
+  
+- The **...** means list all other files in this directory in the order they are named
+</Callout>
+
+---
+
+### 2. Change how a nested group behaves or is represented:
+
+It's possible to use the **meta.json** file to set some standards for a nested set of documentation files, such as their initial state, icon or even enable/disable if the item can be collapsed or not.
+
+Imagine the file **content/docs/grouped-b/meta.json** had this content:
+
+```json
+{
+  "title": "Some custom title",
+  "icon": "Search",
+  "defaultOpen": true,
+  "collapsible": false,
+}
+```
+
+this would leave at group of files always opened in the navigation, while displaying it with the name **Some custom title** with a **Search** icon before the group name.
+
+
+### 3. Set a custom / different file as the **index**
+
+
+This use case is represented by the file **content/docs/grouped-c/meta.json** file, provided below.
+
+```json
+{
+  "pagesIndex": "index-custom"
+}
+```
+
+<Callout type='warn' title='ATTENTION'>
+  The file **meta.json** can also be used at the folder **content/docs**, but only for the application listed in **(1)**.
+</Callout>
+
+A simulation of how the navigation looks like and navigation items behavior can be done clicking [here](03-example-c/preview), where the list of items nested inside navigation preview simulates the whole navigation if the files were structured as in the folder structured provided in this page.

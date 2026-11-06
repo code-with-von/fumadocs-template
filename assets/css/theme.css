@@ -1,0 +1,27 @@
+/* @import "./utilities.css";
+@import "./animations.css"; */
+@import "./fonts.css";
+
+@theme {
+  --page: "Roboto", sans-serif;
+  --title: "Sansation", sans-serif;
+  --color-von-teal: #16b2ab;
+  --color-von-black: oklch(22.578% 0.00249 248.175);
+  --color-von-white: oklch(94.309% 0.00011 271.152);
+  --color-von-gray: oklch(73.802% 0.00008 271.152);
+  --height-screen: 100dvh;
+}
+
+@theme inline {
+  --font-von-page: var(--page);
+  --font-von-title: var(--title);
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+}
+
+@utility check-checked {
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+@utility check-not-checked {
+  clip-path: none;
+}

@@ -1,0 +1,60 @@
+---
+
+title: Style files
+icon: LineStyle
+
+---
+
+This section is composed by the following files:
+
+1. **app/globals.css** (the main css file used in the whole application)
+2. **assets/css** (all files in this folder, as they are imported inside the main file)
+3. **assets/fonts** (the folder used to self-host custom fonts, if needed)
+
+<Callout title='IMPORTANT'>
+  A little talk about **Fumadocs** themes:
+
+  Fumadocs have many pre-built themes, which can be used by following the steps listed on their [official documentation](https://www.fumadocs.dev/docs/ui/theme), but in this project, **a custom theme**, based on the default (**neutral**) fumadocs was created, and to make use of that, check the **assets/css** and **assets/fonts** folders of the codebase, and so that is why we follow the structure used in this template.
+</Callout>
+
+If you are unsure about where / how to edit this file safely, a best alternative is to make use of the inline **Css** styling, as you would be doing on any **React application** (wither using the _className_ or the _style_ prop exposed and accessed by any **React.Node** element)!
+
+### 1. app/globals.css
+Some tips when editing this file:
+
+- [x] Change only the aspects that are related to branding, to avoid breaking up the tailored layout
+- [x] Never delete the already existing imports existing at the **top level** of the file
+- [x] Always add new code for creating your custom classes (if needed) at the end of the already existing code - **@import**[^1] declarations are an exception to this, as imports are always placed at the top level of the file
+
+---
+
+### 1. A little talk about the **assets folder**
+This folder exists to provide static assets that can safely included on your application with degradation of performance. The styling aspect in this folder exists inside **assets/css** and **assets/fonts**.
+
+<Callout type='error' title='IMPORTANT'>
+  Never delete the file **image-zoom.css** from this folder, as this is needed dependency of the project!
+</Callout>
+
+When working with this template, pay attention to the following files:
+
+#### 1. assets/css/theme.css
+
+As stated above, **this template** makes use of the default **Fumadocs template** in order to make it easy for the user to brand it at their needs.
+
+The file that takes care of the theming (and more important, **font-family** and **colors**) is the file **assets/css/theme.css** file!
+
+
+---
+
+#### 1. assets/css/fonts.css
+
+This file declares all **@font-face** declarations to safely link your self hosted fonts to your application (the font files inside the folder **assets/fonts**).
+
+There is not much to talk about this file, except to bring up attention to the fact this file **needs** to be changed when **incorporating your own custom or self-hosted fonts**.
+
+<Callout title='NOTE'>
+  If not using any **custom** or **self-hosted** fonts, the **@import** clause of this file can be **safely commented** in the top level of **assets/css/theme** file.
+  - We don't advise deleting this file, as it can be used later as a reference if needed!
+</Callout>
+
+[^1]: When making use of imports, be sure to test the order in which your imports are place in the file. In **Css** the order of the imports matter!

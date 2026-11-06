@@ -1,0 +1,79 @@
+---
+
+title: Introduction
+
+---
+
+### 1. Motivation
+
+I, **von Schappler**, have spent years of my life working with development (roughly more than 20 years working into this field) and always trying to improve my skills, specially when it comes to code documentation.
+
+When I started working, documenting properly a **codebase** was something stressful and really hard to keep track of, as we didn't have access to tools such as **Git**, **JavaDocs**, and other related tools, which not only help **developers** to keep track of their code, but also were able to generate instant documentation from comments.
+
+Imagine how life was back in the day, when you had to save **main_v1**, then **main_v2** and so on, for each small change you made only to backup your progress.
+
+As programming evolved, I had to find my own evolution. There are things that are done today, which I don't agree, and won't ever use, but something that called my attention was finding alternatives to documenting codebase, as this is important - specially today with our **IDEs** being sensitive about everything we **write**.
+
+I started then making use of what I could to help my fellow teammates into understanding what I was doing and why I was doing **some specific codebase** into that **specific way**.
+
+I had tried many ways of doing that, the most two effective ones today (at least into my field) is still using what we call **Doclets** (which each modern programming language has now - and when used correctly, helps on the IDE **Intellisense** features) and using **Wikis** for more detailed explanations.
+
+I have been using **Wikis** for a long time since then, [**or at least until I heard about MDX**](https://mdxjs.com/), as I work mainly with **React** and **JavaScript**.
+
+Digging a bit more, I found [**Fumadocs**](https://fumadocs.dev), and that is where we are today and the reason I am then **creating this template** to share with **YOU**, as that is the template I use for providing **detailed documentation of my projects** and **ensure all requirements in our [Project Licenses section](/docs/01-licenses/01-eula) are fulfilled.
+
+---
+
+### 1. What this template offers
+
+In short, this template offers what **I** use in my day-by-day life when **I want / need** to provide an external documentation to any projects I create.
+
+So this template is as **documented as it can be**, considering my personal **use-cases**, after I migrated from **Wikis** to this format.
+
+I have nothing to say:
+1. I feel like I full control
+2. I feel like i have full power for customization
+3. I have the  ability of making my own components and use them where I want/need without big problems
+
+Can't tell which of the above (or if all of them), but can say I felt in **love** with this and that is what I'm using and slowly migrating from **Wikis** into my free time.
+
+Fact is - I'm sharing this creation with the public, providing:
+- [x] custom elements to be used
+- [x] detailed information on how to use that
+- [x] the same freedom **I**, **von Schappler**,  wish and would **LOVE** to share with everyone else to work with a complete application that can be used safely for documenting any **codebase properly** in a easy and joyful way of doing it
+- [x] features integration with [**Infisical**](https://infisical.com/) and [**Posthog**](https://posthog.com/) (recommended, but not required[^1])
+
+This project also provides all **IDE** settings and list of extensions used to create it, to make the process of using it as **seamless as it can be**!
+
+<Callout title='NOTE'>
+   This template also contain some **hidden** files, accessible only in **development environments**, so if you want to have full access to everything existing into this project, feel free to **clone** the project on your local machine or access the [full repository codebase online](#update/link/to/repository).
+
+   Also, everything in this template, is 100% customizable, as long as you the skills listed in the next section!
+</Callout>
+
+---
+
+### 1. Skills needed to use this template
+
+Before you start using this template, keep in mind that you need to have at least a **basic** level of knowledge over
+
+- [x] HTML / CSS / JavaScript / TailwindCss
+- [x] React + Nextjs + Shadcn
+- [x] YAML front matter syntax (used for files inside the **/content/docs** folder)
+- [x] MD/MDX formatting
+- [x] GitHub and Github Actions and YAML language to edit scripts
+- [x] Infisical (for injecting environment variables without the need of a **.env** file additional configuration) - optional
+- [x] Posthog (for tracking access to the page) - optional
+- [x] OpenApi (for documenting apis) - optional
+
+<Callout type='error' title='IMPORTANT'>
+  If you **don't need / want** to use **Posthog** and/or **Infisical**, you'll need to make changes into the base project, at your own responsibility.
+
+  Configuration files that use personal api secrets are not added to the project, so if while working with this template you see any values coming from possible a possible **.env** file, create your own file and provide your own values.
+
+   We'll not go through how to make those changes, so we expect that if you are already using this project, you are able to edit the project for your needs.
+</Callout>
+
+[^1]: Those are added as part of how **I** work when doing individual projects, but that is not required for the project to work. **It's important to note, though, that if not using those, you should be capable of making the needed changes yourself to remove those features from the codebase provided in this template**.
+\
+There are plans of updating this template as much as possible and eventually in one of those updates, the use of **Infisical** and **Posthog** will become a add-ons that can be toggled as an environmental variable.

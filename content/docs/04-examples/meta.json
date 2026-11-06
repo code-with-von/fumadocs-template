@@ -1,0 +1,7 @@
+{
+  "title": "Document examples",
+  "icon": "Lightbulb",
+  "defaultOpen": false,
+  "collapsible": true,
+  "pages": ["index", "01-example-a", "02-example-b", "03-example-c"]
+}

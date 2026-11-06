@@ -1,0 +1,61 @@
+---
+
+title: Example 01
+icon: BookOpen
+
+---
+
+import { Folder, File, Files } from 'fumadocs-ui/components/files'
+
+This example showcases the most basic way of creating your folder structure for documenting your code, using **landing pages** - the **index.mdx** file(s) in both **grouped** and **ungrouped** models of documentation.
+
+The suggested folder structure to be used in this case is something like:
+
+<Files>
+  <Folder name="content" defaultOpen>
+    <Folder name="docs" defaultOpen>
+      <Folder name="grouped-a" defaultOpen>
+        <File name="01-file-c.mdx" />
+        <File name="02-file-d.mdx" />
+        <File name="index.mdx" />
+      </Folder>
+      <Folder name="grouped-b" defaultOpen>
+        <File name="01-file-e.mdx" />
+        <File name="02-file-f.mdx" />
+        <File name="index.mdx" />
+      </Folder>
+      <File name="01-file-a.mdx" />
+      <File name="02-file-b.mdx" />
+      <File name="index.mdx" />
+    </Folder>
+  </Folder>
+</Files>
+
+### 1. Files details:
+
+Below there is a short explanation of how the files above will behave and interact with the documentation created when making use of this specific structure.
+
+<Callout type='warn' title='ATTENTION'>
+  The files are being listed relatively to the **content/docs** folder
+</Callout>
+
+#### a. File **index.mdx** (root level of content/docs):
+
+This will be rendered as the landing page of **/docs** route of the application and **does not require further explanation**.
+
+---
+
+#### b. File **index.mdx** (inside nested/grouped folders):
+
+These will be rendered as the landing page of **/docs/nested-folder** route of the application and **does not require further explanation**.
+
+---
+
+#### c. Other **mdx files** (nested/grouped or not):
+
+For every **mdx** file created, we have a new page that will be properly rendered as a new page, under the route **/docs/file-name-without-mdx**, for example:
+
+- the file **01-file-a.mdx** will render a page that can be accessed at **/docs/01-file-a**
+- the file **/grouped/01-file-c.mdx** will render a page that can be accessed at **/docs/grouped/01-file-c**
+
+A simulation of how the navigation looks like and navigation items behavior can be done clicking [here](01-example-a/preview), where the list of items nested inside navigation preview simulates the whole navigation if the files were structured as in the folder structured provided in this page.

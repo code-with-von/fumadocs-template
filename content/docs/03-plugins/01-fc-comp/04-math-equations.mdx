@@ -1,0 +1,77 @@
+---
+
+title: Math Equations
+description: A quick guide on how to add Math equations on this project
+icon: SquareSigma
+permission: dev
+
+---
+
+There are certain situations where using mathematic symbology is necessary, as in this field, mathematics is extremely present, specially when working with data analysis.
+
+That is then why we are using **katex**, a toolset for properly writing math in the web, that is compatible with **LaTex** syntax for writing math equations in a pretty representation.
+
+In this template, math equations can be written in two different ways:
+
+### 1. Inline code
+
+Any math equation that is expected to be written inline, needs to be prepended by `$$` (which starts **math mode** and finished with `$$` to indicate the end of the block, just like shown in the example below:
+
+<Tabs items={['MDX', 'Output']}>
+<Tab value="MDX">
+````mdx
+```mdx
+Inline: $$c = \pm\sqrt{a^2 + b^2}$$
+```
+````
+</Tab>
+<Tab value="Output">
+Inline: $$c = \pm\sqrt{a^2 + b^2}$$
+</Tab>
+</Tabs>
+
+---
+
+### 2. Math codeblock
+
+For more complex equations, it's possible to make use of the `math` codeblock, making it possible to even write inside those blocks multiline equations, as displayed below:
+
+<Tabs items={['MDX', 'Output']}>
+<Tab value="MDX">
+````mdx
+```math
+\displaystyle {
+  \begin{aligned}
+    T_{f}(z)&=\sum _{k=0}^{\infty }{\frac {(z-c)^{k}}{2\pi i}}\int _{\gamma }{\frac {f(w)}{(w-c)^{k+1}}}\,dw
+    \\&={\frac {1}{2\pi i}}\int _{\gamma }{\frac {f(w)}{w-c}}\sum _{k=0}^{\infty }\left({\frac {z-c}{w-c}}\right)^{k}\,dw\\
+    &={\frac {1}{2\pi i}}\int _{\gamma }{\frac {f(w)}{w-c}}\left({\frac {1}{1-{\frac {z-c}{w-c}}}}\right)\,dw\\
+    &={\frac {1}{2\pi i}}\int _{\gamma }{\frac {f(w)}{w-z}}\,dw=f(z),
+  \end{aligned}}
+```
+````
+</Tab>
+  <Tab value="Output">
+    ```math
+\displaystyle {
+  \begin{aligned}
+    T_{f}(z)&=\sum _{k=0}^{\infty }{\frac {(z-c)^{k}}{2\pi i}}\int _{\gamma }{\frac {f(w)}{(w-c)^{k+1}}}\,dw
+    \\&={\frac {1}{2\pi i}}\int _{\gamma }{\frac {f(w)}{w-c}}\sum _{k=0}^{\infty }\left({\frac {z-c}{w-c}}\right)^{k}\,dw\\
+    &={\frac {1}{2\pi i}}\int _{\gamma }{\frac {f(w)}{w-c}}\left({\frac {1}{1-{\frac {z-c}{w-c}}}}\right)\,dw\\
+    &={\frac {1}{2\pi i}}\int _{\gamma }{\frac {f(w)}{w-z}}\,dw=f(z),
+  \end{aligned}}
+```
+  </Tab>
+</Tabs>
+
+---
+
+## What is next? [!toc]
+
+<Cards>
+  <Card href='https://katex.org/'>
+    **KaTex** playground
+  </Card>
+  <Card href='https://docutils.sourceforge.io/docs/ref/rst/mathematics.html'>
+    Learn **LaTex** syntax for mathematics
+  </Card>
+</Cards>

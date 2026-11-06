@@ -1,0 +1,114 @@
+---
+
+title: Components
+icon: Component
+
+---
+
+As any **React developer** should know, one of the main concepts of **React applications** is the idea of reusability. When it comes to the code responsible for displaying a website (web application) - this is handled by the use of **components**.
+
+In this project we have two folders to store those reusable components:
+
+- components (and its subfolders)
+- ui (for a matter of organization, **I** like to organize components that render specific **HTML elements** in this folder)
+
+### 1. The **components** folder
+
+This folder stores the required code of:
+- [x] custom components created by me (**components/custom/\*\***)
+- [x] custom shadcn components installed from shadcn / react providers (**components/ui/\*\***)
+- [x] custom fumadocs components installed in the project (**components/mdx/\*\*** and other files at the **root level** of this folder)[^1]
+
+<Callout title='NOTE'>
+  It's **strongly** advised to not change the existing files that are outside the **/custom** or **/ui** (this folder stores shadcn installed components) subfolder without checking the [official Fumadocs documentation](https://fumadocs.dev/), as the files in the root level of the components folder were tailored by **Fumadocs creators and maintainers** to provide the maximum compatibility with the whole framework.
+</Callout>
+
+---
+
+### 2. The **ui** folder
+
+Before progressing, please don't mistake the **/ui** folder with the **components/ui**, as they fulfill different purposes into the application/codebase.
+
+The **components/ui** folder saves the shadcn components installed in the project and files in that folder as safe to be edited, considering the **philosophy** behind shadcn components.
+
+The **/ui** folder is the place where we usually create reusable pieces of **HTML elements**, with their own css classes, so there is no need to **overload the code with passing again a whole list of classes and styles**.
+
+Even though that folder (for the current version) we just have the **footer** HTML element, below we can see an example on how making use of this can help into speeding up the process of creation.
+
+- Without using the ui folder:
+
+```jsx title='file_without_ui_import.jsx'
+// initial code other imports (like the cn util that is needed here
+
+<div className={cn('pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,#16b2ab08_1px,transparent_1px),linear-gradient(to_bottom,#16b2ab08_1px,transparent_1px)] bg-size-[4rem_4rem]')} style={{your_style: 'object'}}>
+  Your content
+</div>
+
+<div className={cn('pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,#16b2ab08_1px,transparent_1px),linear-gradient(to_bottom,#16b2ab08_1px,transparent_1px)] bg-size-[4rem_4rem]')} style={{your_style: 'object'}}>
+  Your content
+</div>
+
+<div className={cn('pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,#16b2ab08_1px,transparent_1px),linear-gradient(to_bottom,#16b2ab08_1px,transparent_1px)] bg-size-[4rem_4rem]', {
+  conditional_class_1: check_to_apply_1,
+  conditional_class_2: check_to_apply_2
+})} style={{your_style: 'object'}}>
+  Your content
+</div>
+
+// final code
+```
+
+- With the ui folder
+
+<Tabs items={['UiElement', 'Example of use']}>
+<Tab>
+```jsx title='ui/UiElement.jsx'
+
+// initial code with imports (like the cn util that is needed here
+
+const UiElement = ({className, style, children, ...props}) => {
+  return <div 
+    className={cn('pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,#16b2ab08_1px,transparent_1px),linear-gradient(to_bottom,#16b2ab08_1px,transparent_1px)] bg-size-[4rem_4rem]', className)}
+    style={{your_initial_stile_object, ...style}} 
+    {...props}
+    >
+  {children}
+</div>
+}
+
+export default UiElement
+```
+</Tab>
+<Tab>
+```jsx title='file_with_ui_element.jsx'
+
+import UiElement from '@ui/UiElement'
+// initial code with other imports (like the cn util that is needed here)
+
+<UiElement id='element_with_id'>
+  Your content
+</UiElement>
+
+<UiElement className={cn('some_class')}>
+  Your content
+</UiElement>
+
+<UiElement className={cn({
+  conditional_class_1: check_to_apply_1,
+  conditional_class_2: check_to_apply_2
+})} style={{your_additional_style: 'object'}}>
+  Your content
+</UiElement>
+
+// final code
+```
+</Tab>
+</Tabs>
+<Callout title='NOTE'>
+  In the examples above we are oversimplifying the concept and even replacing the **style prop** for a dummy and small sample code, but just by comparing aspects such as code readability and maintainability just for making use of this **/ui** folder, should suffice to explain why it exists.
+
+  > **The pattern above I use always in my professional codebase, not only because it makes the codebase clean, but also because it helps other developers working with me - remember, when you code, you are not coding for you, but also for the ones reading your code!**
+
+</Callout>
+
+[^1]: The added components are compatible with the fixed versions from the **package.json** file, so if you change or update any version on the package list, you have to apply some fixes to the whole project!

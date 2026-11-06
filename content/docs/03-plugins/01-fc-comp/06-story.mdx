@@ -1,0 +1,109 @@
+---
+
+title: Story
+description: Test for history
+icon: Form
+permission: dev
+
+---
+
+import {Folder, File, Files} from 'fumadocs-ui/components/files'
+import { exampleSimpleStory } from '@components/custom/story/example_simple.story';
+
+Story is a special component that is expected to allow user interaction with them in realtime, passing a set of defined values, so the user can expect / test them and verify how they work.
+
+Below there we list all the necessary details to understand how this component work.
+
+### 1. Folder / file structure
+
+As those components have a structure a bit different from other **Fumadocs** elements, those are created on their own folder and they are composed by two different files.
+
+The it's important that the files created follow the this convention name for them to work:
+
+<Files>
+  <Folder name="components" defaultOpen>
+    <Folder name="story" defaultOpen>
+      <File name="story_name_01.story.tsx" />
+      <File name="story_name_01.tsx" />
+      <File name="story_name_02.story.tsx" />
+      <File name="story_name_02.tsx" />
+      <File name="... other *.story.tsx" />
+      <File name="... other *.tsx" />
+    </Folder>
+    <Folder name='... other folders or files in components' defaultOpen/>
+  </Folder>
+</Files>
+
+<Callout type='error' title='IMPORTANT'>
+  Story definition always comes im pairs of two files:
+
+  - **name.story.tsx** - is the file that defines the story, with the configuration for each individual story to be used by the application
+  - **name.tsx** - is the file used to render the component that the defined history above will use on rendering - this file is optional as you can define the code for this component **inside** the property **Component** passed into the function **defineStory** on the **name.story.tsx** file.
+    > For organization purposes, we advise to work with the **pair of files**, but that relies on which way you wish to work.
+</Callout>
+
+---
+
+### 2. Creating and using Story components
+
+Below we provide simple snippets of how each file of this pair should be created and how it should be properly used:
+
+<Tabs items={['Component File', 'Story File', 'MDX', 'Output']}>
+<Tab>
+```ts title='example.tsx'
+
+// this file is always a client file in this configuration
+// so we can provide the needed interactive to the component
+'use client';
+
+export type ExampleStoryComponentProps = {
+  name: string;
+  age?: number;
+}
+
+export function ExampleStoryComponent({ name, age }: ExampleStoryComponentProps) {
+  return <div className="bg-red-400 border rounded-md px-4">
+    <p>Name: {name}</p>
+    <p>Age: {age}</p>
+    </div>;
+}
+```
+</Tab>
+<Tab>
+```ts title='example.story.tsx'
+import { defineStory } from '@lib/story';
+import { ExampleStoryComponent } from '@components/custom/story/example';
+
+export const exampleStory = defineStory({
+  Component: ExampleStoryComponent,
+  args: {
+    // pass default props required by the imported component
+    initial: {
+      name: 'Test for story example',
+      age: 30
+
+    },
+  },
+});
+```
+</Tab>
+<Tab>
+```mdx
+import { exampleStory } from '@components/custom/story/example.story';
+<exampleStory.WithControl />
+```
+</Tab>
+<Tab>
+  <exampleSimpleStory.WithControl />
+</Tab>
+</Tabs>
+
+
+
+<Callout type='error' title='IMPORTANT'>
+  Always use the `WithControl` when calling the component on the MDX file. Not adding `WithControl`can cause one of the below:
+  
+  1. Nothing will be rendered on the screen; or
+  2. If rendered, the controls of the component won't allow user interaction with the component, which invalidates then the reason why this component exists.
+</Callout>
+

@@ -1,0 +1,43 @@
+# EULA (End User License Agreement)
+
+---
+
+This template was created for free: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This template is distributed in the hope that it will be useful, but **WITHOUT ANY WARRANTY**; without even the implied warranty of **MERCHANTABILITY** or **FITNESS FOR A PARTICULAR PURPOSE**.  See the **GNU General Public License** for more details.
+
+You should have received [a copy](./GNU.md) of the **GNU General Public License** along with this template.
+
+--- 
+
+### 1. ATTRIBUTION & NOTICE REQUIREMENTS
+
+Per Sections 4 and 5 of the GNU General Public License v3.0, any redistribution or modification of this codebase must prominently  display attribution to the original author. 
+
+Please include the following notice in your project's documentation, **README**, or visible **About** section:
+
+> This project includes or is built upon code originally created by [von Schappler](update/link/to/repository). 
+>
+> The original work is licensed under the **GNU General Public License v3.0**.
+>
+
+We appreciate the correct attribution over our hard work into this, as this was created thinking about users which are still in need of a starting point for their actual projects, based on what the creator(s) use in their day-by-day lives, for more than 20 years working in the field.
+
+---
+
+
+### 2. MODIFICATION & ANTI-IMPERSONATION RULES
+
+To protect the integrity of the original project and prevent user confusion, any modified redistribution must strictly adhere to the following conditions:
+1. **Branding & Naming**: You may not distribute modified versions of this software under the original name, branding, or identity of the original author. Your fork or derivative work must be clearly and distinctly named.
+2. **Configuration & Customization**: You must alter all default configuration files, API endpoints, contact information, and environment variables where requested or necessary. Distributing modified code that continues to automatically point to or use the original author's active infrastructure, servers, or personal keys is strictly prohibited.
+3. **No False Representation**: You may not represent your modified version as an official release, endorsement, or certified variation by von Schappler. It must be explicitly clear to end-users that they are using a third-party modification.
+
+
+**Copyright ©2026 von Schappler - All rights reserved.**
+
+>  This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+>  
+>  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+>  
+>  You should have received a copy of the GNU Affero General Public License along with this program. If not, see [GNU License](https://www.gnu.org/licenses/).

@@ -1,0 +1,60 @@
+---
+
+title: Site Pages
+icon: Globe
+
+---
+
+The **Site pages** should be created inside the folder **app/(home)** following the [official NextJs](https://nextjs.org/docs/app) documentation regarding the **App Router** file-system.
+
+The main files that we need to explain here are the ones related to the landing page of the application. Those files are:
+1. **app/(home)/layout.tsx** (the file where the customization of all pages which are not part of the **/docs** route)
+1. **app/(home)/page.tsx** (the actual landing page rendered when the user access the **/** route of the application)
+
+### 1. app/(home)/layout.tsx
+
+Considering the actual template provided, in this page you should be taking attention to this specific section of the code:
+
+```tsx title='app/(home)/layout.tsx'
+  // begin of the file
+
+  <HomeLayout
+    {...baseOptions()}
+    nav={{ // [!code focus]
+          title: "Fumadocs base template", // [!code focus]
+          transparentMode: "always", // [!code focus]
+          url: "/", // [!code focus]
+        }} // [!code focus]
+    links={[ // [!code focus]
+      { // [!code focus]
+        icon: <LucideHome />, // [!code focus]
+        url: "/a-link", // [!code focus]
+        text: "A link", // [!code focus]
+      }, // [!code focus]
+    ]} // [!code focus]
+  >
+    {children}
+    <FooterMain />
+  </HomeLayout>
+
+  // end of the file
+```
+
+The reason to call attention to that section, is only because that section is where you configure part of your application and you should change that to ensure the application fits your needs and configurations.
+
+- **nav** prop: makes reference to the title of the project displayed in the navbar in the application.
+- **links** prop: makes reference to external links or other pages you wish to include on your project
+
+Both properties should follow the specific format indicated in the **official Fumadocs** [links documentation](https://www.fumadocs.dev/docs/ui/layouts/links) and [nav documentation](https://www.fumadocs.dev/docs/ui/layouts/nav).
+
+---
+
+### 2. app/(home)/page.tsx
+
+This is the file displayed as your landing page.
+
+The file existent in this template is what **I, von Schappler** use for any documentation I create using fumadocs, as this actual template is part of my **branding** and so used for me everywhere.
+
+Feel free to stick to the same template, and make your changes to it (as long as you provide the required [credits, as indicated in the License provided with the project](/docs/01-licenses/01-eula)) or to make your own version of this page.
+
+> Your creativity is the limit when working with this page!
