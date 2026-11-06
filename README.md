@@ -157,7 +157,9 @@ Inside our `package.json` file we provide some scripts to help managing this tem
 
 This project has custom forms for each different type of issue we are currently able to work at.
 
-To submit an issue, click on the **Issues** button above. That will open our **Issues page** where a green button **New issue** will be available. Click on it and select the appropriate option.
+To submit an issue, click on the [here](https://github.com/code-with-von/fumadocs-template/issues/new/choose). That will open our **Issues page** with a set of options for you to choose.
+
+Select the option that suits your needs and follow the instructions based on your selected option.
 
 ### Got any questions?
 
