@@ -1,6 +1,6 @@
 name: Something I need does not exist in this template
 description: I would need some specific plugin added or a custom component created
-title: "[New Template Request]: requested plugin/component
+title: "[New Template Request]: requested plugin/component"
 assignees:
   - vonschappler
 labels:
