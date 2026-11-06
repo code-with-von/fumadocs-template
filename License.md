@@ -16,7 +16,7 @@ Per Sections 4 and 5 of the GNU General Public License v3.0, any redistribution 
 
 Please include the following notice in your project's documentation, **README**, or visible **About** section:
 
-> This project includes or is built upon code originally created by [von Schappler](update/link/to/repository). 
+> This project includes or is built upon code originally created by [von Schappler](https://github.com/code-with-von/fumadocs-template). 
 >
 > The original work is licensed under the **GNU General Public License v3.0**.
 >
