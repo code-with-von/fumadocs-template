@@ -1,0 +1,86 @@
+name: Something I need does not exist in this template
+description: I would need some specific plugin added or a custom component created
+title: "[New Template Request]: requested plugin/component
+assignees:
+  - vonschappler
+labels:
+  - addition
+  - improvement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > Use this form to provide details about the plugin/component you would like to see implemented by von Schappler.
+  
+  - type: input
+    id: addon-name
+    validations:
+      required: true
+    attributes:
+      label: "1. Plugin/Component name:"
+      description: "Please provide the name of the plugin/component name you wish to be added to this template"
+
+  - type: textarea
+    id: addon-details
+    validations:
+      required: true
+    attributes:
+      label: "2. Plugin/Component details:"
+      placeholder: |
+        Please provide as much details as possible about the plugin/component you are looking for, following the request example below.
+
+  - type: markdown
+    attributes:
+      value: |
+        > Request example:
+        >
+        > ```md
+        > Please provide as much detail as possible, including:
+        > - Why that is needed?
+        > - When it'll be used?
+        > - Which level of customization you wish (applies to custom components)?
+        > - Examples/Screenshots/Screen records of similar use-cases where this plugin/component was used before
+        > - Any other relevant information, such as possible urls where the required plugin/component was found
+        > ```
+
+  - type: dropdown
+    id: contact
+    attributes:
+      description: Let us know if you want to be contacted directly about the progress of work into this.
+      label: "3. Do you want to be contacted about this issue?"
+      options:
+        - "No"
+        - "Yes"
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: email
+    attributes:
+      label: "4. Email:"
+      description: If you select "Yes" above, please provide your email address so that we can contact you about this issue.
+      placeholder: myemail@example.com
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: '5. Consentient:' 
+      options:
+        - label: By selecting "Yes" and providing my e-mail, I understand that the developer won't be using it for any other purposes than contacting me about this issue.
+  
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## Terms:
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: '6. Agreement:' 
+      options:
+        - label: I agree that by submitting this report the information listed here are suggestions that aim to improve the application.
+          required: true
+        - label: I understand that my request may take some time to be attended, and the proposal for improvements I suggested may not be accepted, hence not applied to the application.
+          required: true
