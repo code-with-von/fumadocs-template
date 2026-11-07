@@ -1,6 +1,6 @@
 ---
 
-title: File/Folder structure
+title: Template Files/folders Structure
 icon: Folder
 
 ---
@@ -9,8 +9,8 @@ import {Folder, File, Files} from 'fumadocs-ui/components/files'
 
 <Callout title='NOTE'>
   #### Before you begin
-  You can delete the folder **04-examples** as it should not part of your project!
-  - [x] another option is to add the **permission: dev** to the **YAML front matter** in all files from this folder, to keep them as a reference for your project
+  You can delete the folder **02-file-structure** as it should not part of your project!
+  - [x] another option is to add the **permission: dev** to the **YAML front matter** in all files from this folder, to keep them as a reference for your project (recommended)
   
   This folder is just here to help you understand how the documentation structure works.
 </Callout>
@@ -23,15 +23,36 @@ Regardless of how many files your final project needs, here there will be a list
 The list of files below represent the list of files that should be changed for you to use this template as you see fit.
 
 <Callout type='error' title='IMPORTANT'>
-  Other files not listed here, can still be changed, but changes done are **at your own risk** and should be done based on the required knowledge to change them.
+  The folder structure below lists files a **generic** folder structure with the files you **can be changed** (and **should be changed**) based on your *project requirements*. 
   
-   The folder structure lists files here are files that can be changed within this template without any further complications, as long as **official Fumadocs** documentation is being followed (or if using any of the [custom components](/docs/dev-only/02-components) provided are done by their specs).
+  - **This list is only a reference created on the actual project, but not exhaustive or static**, which means you can:
+    - add files if you need
+    - remove files if you don't need them
+    - rename files if you want to
+    - change/edit the code when necessary
+
+  Just **remember** that:
+  1. changes on the files listed here, should be done based on the required knowledge to change them
+  1. files not listed here **can still be changed**, but any changes done are **at your own risk** and **knowledge-based** on the tech-stack required for using this template
   
-  - All files listed are based on the root folder of the project!
+  <Callout type='warning' title='ATTENTION'>
+    Files listed below are relative to the root level of the project you are creating from this template and names may not match exactly the ones you will find in your project when cloned.
+
+    - `...` means that other files or folders exist under this concept and, regardless of the reason they exist, they were not listed to avoid overflowing information
+  </Callout>
+
 </Callout>
+
 
 <Files>
   <Folder name=".github" defaultOpen>
+    <Folder name='ISSUE_TEMPLATE' defaultOpen>
+      <File name="01-request.yml" />
+      <File name="02-typos.yml" />
+      <File name="03-faq.yml" />
+      <File name="config.yml" />
+      <File name="..." />
+    </Folder>
     <Folder name="workflows" defaultOpen>
       <File name="checks.yml" />
       <File name="deploy.yml" />
