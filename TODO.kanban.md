@@ -2,72 +2,77 @@
 <!-- GitHub: https://github.com/jebakumarj/md-kanban -->
 <!-- VS Code Extension: Search "MD Kanban" in the extension store (ID: jeddak.md-kanban) -->
 
-# Kanban Board
-
-## Always check
-
-#### Check for broken links
-<!-- id: task-1792758440325-154 -->
-Start date: 2026-10-23
-
----
-
-Broken links may exist even after the project is deployed, so we need to consistently keep track of those.
-
----
-Tags: `constant_checks`
-<!-- priority: critical -->
-<!-- assignee: @vonschappler -->
+# @code-with-von/fumadocs-template/TODO
 
 ## To Do
 
+### Support to Mobile screens
+
+#### Add support to mobile views
+<!-- id: task-1794048753967-1 -->
+
+---
+
+When testing responsiveness, some mobile views break the layout, in certain breakpoints which are not default to either Tailwind CSS or Fumadocs
+
+---
+
+- [ ] Test mobile views
+- [ ] Configure correct breakpoints
+- [ ] Fix CSS definitions to support mobile views where needed
+
+Tags: `improvements`
+<!-- priority: low -->
+<!-- assignee: vonschappler -->
+
 ## In Progress
-
-### Documentation
-
-#### Create the base template
-<!-- id: task-1792758440325-155 -->
-Start date: 2026-10-23
-End date: 2026-10-23
-- [x] Initialize the project
-- [x] Install and configure **custom components**
-- [ ] Add Github files into the project
-- [ ] Add / update files to match a proper template description/documentation
-- [ ] Finish template
-- [ ] Test build of template
-- [ ] Push template to the repository
-Tags: `docs` `main_project`
-<!-- priority: critical -->
-<!-- workload: hard -->
-<!-- assignee: @vonschappler -->
 
 ## Done
 
-### Documentation
+### Review R@1.0.0
 
-#### Add Example Files
-<!-- id: task-1792758440325-156 -->
-Start date: 2026-10-23
-End date: 2026-10-23
-- [x] Add **content/docs/03-examples** folder
-- [x] Add **content/docs/03-examples/01-with-index** folder and files
-- [x] Add **content/docs/03-examples/02-without-index** folder and files
-Tags: `docs` `example_files`
-<!-- assignee: @vonschappler -->
+#### Create Review R@1.0.0 codebase
+<!-- id: task-1794048753967-0 -->
+Start date: 2026-11-06
+End date: 2026-11-
 
-#### Add Developer Resources Files
-<!-- id: task-1792758440325-157 -->
-Start date: 2026-10-23
+---
 
-- [x] Add folder **content/docs/02-dev-only** (and needed files), as development references
-Tags: `docs` `developer_reference`
-<!-- assignee: @vonschappler -->
+Publish review R@1.0.0 of the current project
 
-#### Add License Files
-<!-- id: task-1792758440325-158 -->
-Start date: 2026-10-23
-End date: 2026-10-23
-- [x] Add License.md and /docs/01-licenses/01-license.mdx files
-- [x] Add GNU.md and /docs/01-licenses/02-gnu.mdx files
-Tags: `docs` `license_files`
-<!-- assignee: @vonschappler -->
+---
+
+- [x] Consolidate repository structure
+- [x] Create github issue templates
+- [x] Add github actions
+- [x] Add initial codebase for the project
+- [x] Add/Update repository documentation files (Changelog, FileTree, README.md, TODO.kanban.md)
+- [x] Add repository Licensing files
+Tags: `R@1.0.0`
+<!-- priority: high -->
+<!-- workload: hard -->
+<!-- assignee: vonschappler -->
+
+#### Deploy Review R@1.0.0
+<!-- id: task-1794048753967-1 -->
+Start date: 2026-11-06
+End date: 2026-11-
+
+---
+
+Deploy review R@1.0.0 of the current project
+
+---
+
+- [ ] Build and test the application locally using ".env.local"
+- [ ] Build and test the application locally using "Infisical"
+- [ ] Create the deployment configuration on Vercel
+- [ ] Connect the deployment configuration to "Infisical"
+- [ ] Deploy to Vercel
+- [ ] Test the deployment
+
+
+Tags: `R@1.0.0`
+<!-- priority: high -->
+<!-- workload: hard -->
+<!-- assignee: vonschappler -->
