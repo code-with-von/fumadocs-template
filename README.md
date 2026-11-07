@@ -68,7 +68,7 @@ Because the way it was built, that means we can, as **developers**:
 
 To setup a development environment to use this template, those are the steps you need to follow[^1].
 
-1. setup pnpm as your package manager
+1. setup pnpm[^2] as your package manager
 1. clone this repository locally
 1. install the needed dependencies
 1. boot up the development script
@@ -100,35 +100,35 @@ If you want to update them and something breaks out, remember that **no further 
 
 Inside our `package.json` file we provide some scripts to help managing this template. Those scripts are organized into the following groups:
 
-### 1. Depends on a physical .env/.env.local files placed at the root level of the project:
-1. **start local dev with `.env.local`**:
+### 1. Local Development using `.env.local`:
+1. **start local development server**:
     >```shell
     >$ pnpm dev
     >```
-1. **build local dev with `.env.local`**:
+1. **build local preview**:
     >```shell
     >$ pnpm build
     >```
-1. **start local build with `.env.local`** (use this just after the project is built using the previous command):
+1. **start local preview** (use this just after the project is built using the previous command):
     >```shell
     >$ pnpm start
     >```
 
-### 2. Depends on Infisical setup:
+### 2. Local Development using `Infisical`:
 
 1. **connect the project to your infisical project**:
     >```shell
     >$ pnpm infisical:init
     >```
-1. **build local dev with your connected `Infisical` settings**:
+1. **build local development with your connected `Infisical` settings**:
     >```shell
     >$ pnpm inf:build
     >```
-1. **start local dev your connected `Infisical` settings**:
+1. **start local development with your connected `Infisical` settings**:
     >```shell
     >$ pnpm inf:dev
     >```
-1. **start local preview your connected `Infisical` settings** (use this just after the project is built using the previous command):
+1. **start local preview with your connected `Infisical` settings** (use this just after the project is built using the previous command):
     >```shell
     >$ pnpm inf:start
     >```
@@ -175,4 +175,6 @@ If you have any questions, feel free to submit them to the by selecting the **FA
 Questions and answers will be added here as they are received and answered.
 
 [^1]: The listed steps take under considerations that you have all the required knowledge to perform those steps - no external support will be provided over those, **unless you are a paying customer asking for teaching classes**.
+
+[^2]: You can use any package manager you prefer, but **pnpm** is the recommended package manager for this project, to avoid any potential issues with dependencies or conflicts with files created by other package managers.
 
