@@ -39,7 +39,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "components/custom/HomeTerminal.jsx"
-, "components/custom/story/example_simple.story.tsx"  ],
+    "components/custom/HomeTerminal.jsx",
+    "components/custom/story/example_simple.story.tsx"
+  ],
   "exclude": ["node_modules"]
 }
