@@ -1,3 +1,9 @@
+/**
+ * APPLIED_LINT_RULE by @vonschappler
+ * biome-ignore-all lint/suspicious/noArrayIndexKey: false positive as this index, when used is stable and unique
+ * biome-ignore-all lint/correctness/useExhaustiveDependencies: false positive as this came from 3rd party resources
+ */
+
 "use client";
 
 import { cn } from "@app/lib/utils";
