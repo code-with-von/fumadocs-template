@@ -51,12 +51,14 @@ export default function Home() {
                 [ CHECK_THE_CONCEPT ]
               </Link>
 
-              {process.env.NODE_ENV === 'development' && <Link
-                href="/docs/02-dev-only"
-                className="border-2 border-von-teal/30 px-8 py-4 font-mono font-semibold text-von-teal transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white"
-              >
-                [ DEVELOPER'S_REFERENCE ]
-              </Link>}
+              {process.env.NODE_ENV === "development" && (
+                <Link
+                  href="/docs/03-plugins/01-fc-comp"
+                  className="border-2 border-von-teal/30 px-8 py-4 font-mono font-semibold text-von-teal transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white"
+                >
+                  [ PLUGINS_REFERENCE ]
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -93,10 +95,10 @@ export default function Home() {
         <div className="mx-auto grid max-w-10xl divide-y-2 divide-zinc-800 xl:grid-cols-3 xl:divide-x-2 xl:divide-y-0">
           <div className="group col-span-3 p-10 transition-colors duration-300 hover:bg-zinc-900/50 md:col-span-1 lg:p-14">
             <div className="mb-6 font-mono text-von-teal text-xs tracking-widest">
-              [ CUSTOM_COMPONENTS ]{" "}
+              [ PLUGINS_AND_CUSTOM_COMPONENTS ]{" "}
             </div>
             <h3 className="mb-4 font-bold text-2xl text-white tracking-tight transition-colors group-hover:text-von-teal">
-              External <strong>Fumadocs</strong> dependencies
+              <strong>Fumadocs</strong> plugins and other unique components
             </h3>
             <p className="font-light text-zinc-400 leading-relaxed">
               This template uses and documents how to use the external and most
@@ -104,17 +106,21 @@ export default function Home() {
               ensure and allow the best customization as possible!
             </p>
             <div className="mt-2 flex w-full justify-end">
-              {process.env.NODE_ENV === 'development' ? <Link
-                href="/docs/dev/only"
-                className="border-2 border-von-teal/30 px-8 py-4 font-mono font-semibold text-von-teal transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white"
-              >
-                [ SEE_FUMADOCS_COMPONENTS ]
-              </Link> : <Link
-                href="link/to/repository"
-                className="border-2 border-von-teal/30 px-8 py-4 font-mono font-semibold text-von-teal transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white"
-              >
-                [ DOWNLOAD_THE_PROJECT ]
-              </Link>}
+              {process.env.NODE_ENV === "development" ? (
+                <Link
+                  href="/docs/03-plugins/01-fc-comp"
+                  className="border-2 border-von-teal/30 px-8 py-4 font-mono font-semibold text-von-teal transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white"
+                >
+                  [ OPEN_PLUGINS_LIST ]
+                </Link>
+              ) : (
+                <Link
+                  href="https://github.com/code-with-von/fumadocs-template"
+                  className="border-2 border-von-teal/30 px-8 py-4 font-mono font-semibold text-von-teal transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white"
+                >
+                  [ DOWNLOAD_THE_PROJECT ]
+                </Link>
+              )}
             </div>
           </div>
 
@@ -126,7 +132,10 @@ export default function Home() {
               File system examples
             </h3>
             <p className="font-light text-zinc-400 leading-relaxed">
-              In the current revision, there is a total of <strong>three examples</strong>, with both recommended file / folder structure as well as a preview on what to expect as the final result for each use case.
+              In the current revision, there is a total of{" "}
+              <strong>three examples</strong>, with both recommended file /
+              folder structure as well as a preview on what to expect as the
+              final result for each use case.
             </p>
             <div className="mt-2 flex w-full justify-end">
               <Link
@@ -146,7 +155,10 @@ export default function Home() {
               EULA and GNU
             </h3>
             <p className="font-light text-zinc-400 leading-relaxed">
-              This is a base template free to use, as long as the specifications in our license section are fulfilled. Both licenses are already added to the project, so you don't need to search for them anywhere!
+              This is a base template free to use, as long as the specifications
+              in our license section are fulfilled. Both licenses are already
+              added to the project, so you don't need to search for them
+              anywhere!
             </p>
             <div className="mt-2 flex w-full justify-end">
               <Link
