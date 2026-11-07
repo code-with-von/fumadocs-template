@@ -15,16 +15,19 @@ const Copyright = () => {
       <br />
       <br />
       <p>
-        Created using <strong>Fumadocs</strong> and{" "}
-        <strong>Devin Desktop</strong> / <strong>Visual Studio Code</strong>.
+        This template is better visualized <strong>laptops</strong> and{" "}
+        <strong>desktop</strong> screens and was created using{" "}
+        <strong>Fumadocs</strong> and <strong>Devin Desktop</strong> /{" "}
+        <strong>Visual Studio Code</strong>.
       </p>
+      <br />
       <p>
         Among other technologies used, we can list: <strong>React</strong>,{" "}
         <strong>NextJs</strong>, <strong>TailwindCSS</strong> and{" "}
         <strong>Shadcn</strong>
       </p>
       <p>
-        &copy; <strong>vonSchappler </strong> &bull; 2010-
+        &copy; <strong>vonSchappler</strong> &bull; 2010-
         {new Date().getFullYear()}
       </p>
     </div>
