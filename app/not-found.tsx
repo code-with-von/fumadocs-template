@@ -45,7 +45,10 @@ const PageNotFound = () => {
             "max-w-xl justify-self-center text-center font-light text-md text-zinc-400 leading-relaxed md:text-lg",
           )}
         >
-          ... and as access to <strong>{pathName}</strong> is either <strong>restrict at this moment</strong> or the page <strong>was not created</strong> yet, <strong>let't play a game</strong>!
+          ... and as access to <strong>{pathName}</strong> is either{" "}
+          <strong>restrict at this moment</strong> or the page{" "}
+          <strong>was not created</strong> yet,{" "}
+          <strong>let't play a game</strong>!
         </p>
       )}
       <div

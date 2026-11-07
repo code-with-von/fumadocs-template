@@ -1,5 +1,5 @@
 /**
- * APPLY_LINT_RULE by @vonschappler 
+ * APPLY_LINT_RULE by @vonschappler
  * biome-ignore-all lint/suspicious/useIterableCallbackReturn: this is an imported file from 3rd party library
  */
 

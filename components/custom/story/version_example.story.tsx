@@ -5,8 +5,8 @@ export const exampleVersion = defineStory({
   Component: VersionExampleComponent,
   args: {
     initial: {
-      version: 'VERSION v@1.0.0',
-      isCurrent: true
+      version: "VERSION v@1.0.0",
+      isCurrent: true,
     },
   },
 });

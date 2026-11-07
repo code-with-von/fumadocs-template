@@ -1,4 +1,4 @@
-/** 
+/**
  * APPLIED_LINT_RULE by @vonschappler
  * biome-ignore-all lint/correctness/useHookAtTopLevel: not supposed to change controlled/uncontrolled
  */

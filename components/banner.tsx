@@ -1,8 +1,7 @@
-/** 
+/**
  * APPLIED_LINT_RULE by @vonschappler
  * biome-ignore-all lint/security/noDangerouslySetInnerHtml: false positive
-*/
-
+ */
 
 "use client";
 

@@ -1,5 +1,5 @@
 /**
- * APPLIED_LINT_RULE by @vonschappler 
+ * APPLIED_LINT_RULE by @vonschappler
  * biome-ignore-all lint/a11y/useFocusableInteractive: false positive
  * biome-ignore-all lint/suspicious/noArrayIndexKey: false positive
  * biome-ignore-all lint/a11y/useAriaPropsForRole: false positive

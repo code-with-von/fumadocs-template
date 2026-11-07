@@ -1,4 +1,4 @@
-/** 
+/**
  * APPLY_LINT_RULE by @vonschappler
  * biome-ignore-all lint/suspicious/noArrayIndexKey: imported 3rd party file
  */

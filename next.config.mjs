@@ -1,4 +1,3 @@
-import { hostname } from "node:os";
 import { createNextStory } from "@fumadocs/story/next";
 import { createMDX } from "fumadocs-mdx/next";
 

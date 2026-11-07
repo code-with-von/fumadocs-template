@@ -4,39 +4,39 @@ import { loader, update } from "fumadocs-core/source";
 import { lucideIconsPlugin } from "fumadocs-core/source/lucide-icons";
 import { openapiPlugin } from "fumadocs-openapi/server";
 
-const isProd = process.env.NODE_ENV === 'production';
+const isProd = process.env.NODE_ENV === "production";
 
 const filteredSource = update(docs.toFumadocsSource())
   .files((files) => {
     if (!isProd) return files;
 
     const prodPages = files.filter(
-      (file) => file.type === 'page' && file.data.permission !== 'dev'
+      (file) => file.type === "page" && file.data.permission !== "dev",
     );
 
     const allowedFolderPaths = new Set<string>();
 
     for (const page of prodPages) {
-      const parts = page.path.split('/');
+      const parts = page.path.split("/");
       parts.pop();
 
       while (parts.length > 0) {
-        allowedFolderPaths.add(parts.join('/'));
+        allowedFolderPaths.add(parts.join("/"));
         parts.pop();
       }
     }
 
     return files.filter((file) => {
-      if (file.type === 'page') {
-        return file.data.permission !== 'dev';
+      if (file.type === "page") {
+        return file.data.permission !== "dev";
       }
 
-      if (file.type === 'meta') {
-        const parts = file.path.split('/');
+      if (file.type === "meta") {
+        const parts = file.path.split("/");
         parts.pop();
-        const folderPath = parts.join('/');
+        const folderPath = parts.join("/");
 
-        return folderPath === '' || allowedFolderPaths.has(folderPath);
+        return folderPath === "" || allowedFolderPaths.has(folderPath);
       }
 
       return true;
