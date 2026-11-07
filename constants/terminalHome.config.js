@@ -51,5 +51,5 @@ export const outputLinks =
         ],
       }
     : {
-        0: ["update/link/to/repo"],
+        0: ["https://github.com/code-with-von/fumadocs-template"],
       };
