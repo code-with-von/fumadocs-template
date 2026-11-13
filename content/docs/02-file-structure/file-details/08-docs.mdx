@@ -18,7 +18,7 @@ or even writing their documentation using **Wiki based** format, just like **I a
 
 In this section, I won't be entering in details about **MDX**, but explain how to proper structure your files and folders for documenting your project.
 
-### 1. The content/docs folder
+## The content/docs folder [step]
 
 This folder is where all of your files with the extension **mdx** need to be placed. As I said before I won't enter into details, but in order to use (not only **this template** but) **Fumadocs**, all files that represent a documentation information (which will always be accessible by the **your.host/docs**) need to be stored here and follow this specific format:
 
@@ -35,7 +35,7 @@ There is a dedicated set of examples into the **Document examples** section, so 
 
 ---
 
-### 2. Ways of documenting your codebase
+## Ways of documenting your codebase [step]
 
 The way this project/template was created, suggests two different ways of documenting your code. **ungrouped** and **grouped**, which the only diference between those is how they **behave** on the user interaction.
 
@@ -47,8 +47,8 @@ The way this project/template was created, suggests two different ways of docume
   It's **important** to note that if you are using the **grouped documentation**, to each individual group you wish to further customize **MUST HAVE** their own **meta.json** file, specially because with this file it's even possible to **force** specific files to be displayed in a different order in the **navigation bar** rendered!
 </Callout>
 
-#### 1. Grouped documentation
-Grouped documentation is useful when we have the desire to structure our documentation navigation based on how files correlate with each other.
+### Grouped/Nested documentation [step]
+Grouped (or nested)documentation is useful when we have the desire to structure our documentation navigation based on how specific files correlate with each other.
 
 This is done by creating a new folder inside the **content/docs** folder - the deeper the level, the more sub-routes you have, eg:
 
@@ -81,8 +81,7 @@ Below there is a simple representation on how to place files correctly in order 
   </Folder>
 </Files>
 <figcaption>
-Folder structure for the **grouped** documentation model, relative from the **content** folder.
-- [x] files **meta.json** and **index.mdx** inside groups are optional
+Folder structure for the **grouped** documentation model, relative from the **content** folder - the files **meta.json** and **index.mdx** inside groups are optional
 </figcaption>
 </figure>
 
@@ -94,7 +93,7 @@ Folder structure for the **grouped** documentation model, relative from the **co
 </Callout>
 ---
 
-#### 1. Ungrouped documentation
+### Ungrouped documentation [step]
 
 Ungrouped documentation is useful when documenting simple projects or the files used for documenting do not have a specific relation one ot the other.
 
@@ -115,12 +114,13 @@ The typical folder structure for this model of documentation is displayed below:
     </Folder>
 </Files>
 <figcaption>
-Folder structure for the **ungrouped** documentation model, relative from the **content** folder.
-- [x] file **meta.json** is optional
+Folder structure for the **ungrouped** documentation model, relative from the **content** folder - the file **meta.json** is optional
 </figcaption>
 </figure>
 
-### 3. Naming conventions
+###
+---
+## Naming conventions [step]
 
 This template also suggests a **naming convention** as a way to help into ordering how the document pages are listed in the navigation bar that is rendered on any **/docs** route of the application.
 
@@ -138,7 +138,7 @@ By inspecting the codebase for the **/content/docs** folder, it's possible to se
 
 ---
 
-### 4. The YAML front matter custom permission: **dev** in files
+## The YAML front matter custom permission: **dev** in files [step]
 
 This is was a feature added in this template, to ensure the users can create their on temporary pages before those can be deployed into production by adding:
 
@@ -161,6 +161,6 @@ permission: dev
 
 ---
 
-### 5. Documentation files examples
+## Documentation files examples [step]
 
 If you want to se practical examples over how to properly document your project, check the session **Document examples**, on navigation bar.

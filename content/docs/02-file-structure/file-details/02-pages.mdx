@@ -11,7 +11,7 @@ The main files that we need to explain here are the ones related to the landing 
 1. **app/(home)/layout.tsx** (the file where the customization of all pages which are not part of the **/docs** route)
 1. **app/(home)/page.tsx** (the actual landing page rendered when the user access the **/** route of the application)
 
-### 1. app/(home)/layout.tsx
+## app/(home)/layout.tsx [step]
 
 Considering the actual template provided, in this page you should be taking attention to this specific section of the code:
 
@@ -31,6 +31,25 @@ Considering the actual template provided, in this page you should be taking atte
         url: "/a-link", // [!code focus]
         text: "A link", // [!code focus]
       }, // [!code focus]
+      { // [!code focus]
+        type: "menu", // [!code focus]
+        text: "A menu", // [!code focus]
+        items: [ // [!code focus]
+          { // [!code focus]
+            text: "Internal link", // [!code focus]
+            description: // [!code focus]
+              "Internal link description (will render the 404 if you click here, as this page does not exist and was added just to showcase how the menu works)", // [!code focus]
+            url: "/b-link", // [!code focus]
+            icon: <LucideHome />, // [!code focus]
+          }, // [!code focus]
+          { 
+            text: "External link", 
+            description: 
+              "External link description (will open google.com in a new tab or window, as it was added just to showcase how menu works)", 
+            url: "https://google.com",
+          }, 
+        ], // [!code focus]
+      }, // [!code focus]
     ]} // [!code focus]
   >
     {children}
@@ -43,13 +62,13 @@ Considering the actual template provided, in this page you should be taking atte
 The reason to call attention to that section, is only because that section is where you configure part of your application and you should change that to ensure the application fits your needs and configurations.
 
 - **nav** prop: makes reference to the title of the project displayed in the navbar in the application.
-- **links** prop: makes reference to external links or other pages you wish to include on your project
+- **links** prop: makes reference to external links or other pages you wish to include on your project (nested or not inside **menus**)
 
 Both properties should follow the specific format indicated in the **official Fumadocs** [links documentation](https://www.fumadocs.dev/docs/ui/layouts/links) and [nav documentation](https://www.fumadocs.dev/docs/ui/layouts/nav).
 
 ---
 
-### 2. app/(home)/page.tsx
+## app/(home)/page.tsx [step]
 
 This is the file displayed as your landing page.
 

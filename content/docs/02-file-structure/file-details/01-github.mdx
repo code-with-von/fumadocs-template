@@ -5,20 +5,27 @@ icon: GitGraph
 
 ---
 
-The Github files with importance shared in this project are inside the folder **.github/workflows** and they are responsible for the **CI/CD** side of the application, in case you wish to make use of them.
+The Github files with importance shared in this project are inside the folder **.github** and they are responsible for the **CI/CD** side of the application, in case you wish to make use of them, as for some other configurations.
 
 Currently, the provided template provide two main files:
-1. **checks.yml**
-    - uses **Github Actions** to check if the codebase created can be safely deployed, based on default checks I use on my daily base
-1. **deploy.yml**
-    - uses **Github Actions** to deploy the project based on the given configurations
+
+## workflows folder [step]
+This folder contains the Github Actions workflows that are used to check if the codebase created can be safely deployed, based on default checks I use on my daily base.
+
+Depending on your knowledge over this subject, you can modify the existing files, add new ones or simply delete those files from the folder, if you don't need them.
+
+---
+
+## ISSUE_TEMPLATE folder [step]
+This folder contains the issue templates that are used to create issues in the repository.
+
+It's important to note that those templates are not needed, but they helps a lot regarding the organization of the issues, as you can make use forms with required fields, validation and other.
+
 
 <Callout title='NOTE'>
-You are free to add new files or edit the existing ones to your own needs, **at your own risk**!
+    When using **ISSUE_TEMPLATE** folder, make sure to follow the [Github documentation](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository) for more details and to always create the file **config.yml** inside the folder, as that allows you to hide the blank issue template and only list your own templates.
 </Callout>
+
+##
 
 No more details will be provide for those files - the files provided fits the project, considering all requirements on [this page](/docs#1-skills-needed-to-use-this-template) are fulfilled by the one using this template, as those files were created based on them.
-
-<Callout title='NOTE'>
-    In case you don't need those files or want to make your own, feel free to delete the ones existing, or adding the files which are already part of your **CI/CD** flows.
-</Callout>

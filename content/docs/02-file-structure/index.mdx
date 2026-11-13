@@ -8,24 +8,23 @@ icon: Folder
 import {Folder, File, Files} from 'fumadocs-ui/components/files'
 
 <Callout title='NOTE'>
-  #### Before you begin
+  ### Before you begin
+    The contents of this section is placed inside the **02-file-structure** folder, which is part of the **content/docs** folder.
+
   You can delete the folder **02-file-structure** as it should not part of your project!
   - [x] another option is to add the **permission: dev** to the **YAML front matter** in all files from this folder, to keep them as a reference for your project (recommended)
   
   This folder is just here to help you understand how the documentation structure works.
 </Callout>
 
+Regardless of how many files your final project needs, here we have a reasonable example on how to structure your documentation project, when using this template. **The name of the files/folders are fictional and does not match the actual project you are creating or the names provided in the project**!
 
-Regardless of how many files your final project needs, here there will be a list of the files that could be changed safely for you, **as the user**, change without breaking how this template works.
+## Files/Folder List [step]
 
-### 1. Files/Folder List
-
-The list of files below represent the list of files that should be changed for you to use this template as you see fit.
+The list of files below exemplifies the expected structure of your documentation project **if** you are using this template.
 
 <Callout type='error' title='IMPORTANT'>
-  The folder structure below lists files a **generic** folder structure with the files you **can be changed** (and **should be changed**) based on your *project requirements*. 
-  
-  - **This list is only a reference created on the actual project, but not exhaustive or static**, which means you can:
+  - **The folder structure below is only a reference. It is not exhaustive or static**, which means you can:
     - add files if you need
     - remove files if you don't need them
     - rename files if you want to
@@ -33,103 +32,116 @@ The list of files below represent the list of files that should be changed for y
 
   Just **remember** that:
   1. changes on the files listed here, should be done based on the required knowledge to change them
-  1. files not listed here **can still be changed**, but any changes done are **at your own risk** and **knowledge-based** on the tech-stack required for using this template
-  
-  <Callout type='warning' title='ATTENTION'>
-    Files listed below are relative to the root level of the project you are creating from this template and names may not match exactly the ones you will find in your project when cloned.
-
-    - `...` means that other files or folders exist under this concept and, regardless of the reason they exist, they were not listed to avoid overflowing information
-  </Callout>
-
+  1. files not listed here **can still be changed**, but any changes done are **at your own risk** and **knowledge-based** on the **tech-stack** required for using this template
+  1. Files listed below are relative to the root level of the project you are creating from this template and names may not match exactly the ones you will find in your project when cloned
+  1. `...` means that **other** files or folders **may/can** exist under this concept and, regardless of the reason they exist, they were not listed to avoid overflowing information
+  1. `*` after a file/folder name means that if you are using that file/folder, it should not be renamed - the actual file/folder does not contain the `*` character, as it's being added here just as an indicator that the file/folder should not be changed in the codebase
+  1. `ts`, `js`, `tsx` and `jsx` are being used **interchangeably** in this template as the template supports both file types without breaking the application
 </Callout>
 
+<figure>
 
 <Files>
-  <Folder name=".github" defaultOpen>
-    <Folder name='ISSUE_TEMPLATE' defaultOpen>
-      <File name="01-request.yml" />
-      <File name="02-typos.yml" />
-      <File name="03-faq.yml" />
-      <File name="config.yml" />
+  <Folder name=".github *">
+    <Folder name='ISSUE_TEMPLATE *'>
+      <File name="01-template-a.yml" />
+      <File name="02-template-b.yml" />
+      <File name="03-template-c.yml" />
+      <File name="config.yml *" />
       <File name="..." />
     </Folder>
-    <Folder name="workflows" defaultOpen>
+    <Folder name="workflows *">
       <File name="checks.yml" />
-      <File name="deploy.yml" />
       <File name="..." />
     </Folder>
   </Folder>
-    <Folder name='app' defaultOpen>
-      <Folder name='(home)' defaultOpen>
-        <Folder name='a-link' defaultOpen>
-          <File name="page.jsx" />
+    <Folder name='app *'>
+      <Folder name='(home) *'>
+        <Folder name='a-link'>
+          <File name="page.jsx *" />
         </Folder>
-        <File name="layout.tsx" />
-        <File name="page.tsx" />
+        <Folder name='b-link'>
+          <Folder name='sub-link'>
+            <File name="page.jsx *" />
+          </Folder>
+        </Folder>
+        <File name="layout.tsx *" />
+        <File name="page.tsx *" />
       </Folder>
-      <File name="globals.css" />
+      <File name="globals.css *" />
       <File name="icon.png" />
-      <File name="layout.tsx" />
-      <File name="global-not-found.tsx" />
+      <File name="layout.tsx *" />
+      <File name="not-found.tsx *" />
       <File name="..." />
     </Folder>
-    <Folder name='assets' defaultOpen>
+    <Folder name='assets *'>
       <File name="..." />
     </Folder>
-    <Folder name='components' defaultOpen>
-      <Folder name='custom' defaultOpen>
+    <Folder name='components *'>
+      <Folder name='custom *'>
         <File name="custom_component.jsx" />
         <File name="another_custom_component.tsx" />
         <File name="..." />
       </Folder>
       <File name="..." />
     </Folder>
-    <Folder name='constants' defaultOpen>
+    <Folder name='constants *'>
       <File name="global_constant_01.js" />
       <File name="global_constant_02.jsx" />
       <File name="global_constant_03.ts" />
       <File name="global_constant_04.tsx" />
       <File name="..." />
     </Folder>
-    <Folder name='content' defaultOpen>
-      <Folder name='docs' defaultOpen>
-        <Folder name='doc_meta' defaultOpen>
-          <File name="file_01.mdx" />
-          <File name="file_02.mdx" />
-          <File name="meta.json" />
+    <Folder name='content *'>
+      <Folder name='docs *'>
+        <Folder name='folder-a'>
+          <File name="01-file-01.mdx" />
+          <File name="02-file-02.mdx" />
+          <File name="meta.json *" />
         </Folder>
-        <Folder name='doc_meta_index' defaultOpen>
-          <File name="file_01.mdx" />
-          <File name="file_02.mdx" />
+        <Folder name='folder-b'>
+          <File name="01-file-01.mdx" />
+          <File name="02-file-02.mdx" />
           <File name="index.mdx" />
-          <File name="meta.json" />
+          <File name="meta.json *" />
         </Folder>
-        <Folder name='doc_no_meta' defaultOpen>
-          <File name="file_01.mdx" />
-          <File name="file_02.mdx" />
+        <Folder name='folder-c'>
+          <File name="01-file-01.mdx" />
+          <File name="02-file-02.mdx" />
         </Folder>
-        <Folder name='doc_no_meta_index' defaultOpen>
-          <File name="file_01.mdx" />
-          <File name="file_02.mdx" />
+        <Folder name='folder-d'>
+          <File name="01-file-01.mdx" />
+          <File name="02-file-02.mdx" />
           <File name="index.mdx" />
         </Folder>
-        <Folder name='...' defaultOpen/>
+        <File name='...' />
       </Folder>
       <File name="index.mdx" />
+      <File name="..." />
     </Folder>
-    <Folder name='public' defaultOpen>
-      <File name="file_exposed_to_client_01.ext01" />
-      <File name="file_exposed_to_client_02.ext02" />
-      <Folder name="organized_folder_01" defaultOpen>
-        <File name="file_exposed_to_client_03.ext03" />
-        <File name="file_exposed_to_client_04.ext04" />
+    <Folder name='public *'>
+      <File name="public-file-01.ext01" />
+      <File name="public-file-02.ext02" />
+      <Folder name="folder_a">
+        <File name="public-file-03.ext03" />
+        <File name="public-file-04.ext04" />
       </Folder>
     </Folder>
-    <Folder name='ui' defaultOpen>
+    <Folder name='ui *'>
       <File name='ui_component.jsx' />
       <File name='another_ui_component.tsx' />
       <File name="..." />
+      <Folder name='folder_a'>
+        <File name='ui_component.jsx' />
+        <File name='another_ui_component.tsx' />
+        <File name="..." />
+      </Folder>
     </Folder>
-    <File name='.env.example' />
+    <File name='.env.example *' />
+    <File name='package.json *' />
     <File name='...' />
 </Files>
+<figcaption>
+  File structure of the template. Click on any folder to expand it and see its contents.
+</figcaption>
+</figure>
