@@ -98,10 +98,10 @@ Deploy review R@1.0.0 of the current project
 
 - [x] Build and test the application locally using ".env.local"
 - [x] Build and test the application locally using "Infisical"
-- [ ] Create the deployment configuration on Vercel
-- [ ] Connect the deployment configuration to "Infisical"
-- [ ] Deploy to Vercel
-- [ ] Test the deployment
+- [x] Create the deployment configuration on Vercel
+- [x] Connect the deployment configuration to "Infisical"
+- [x] Deploy to Vercel
+- [x] Test the deployment
 
 
 Tags: `R@1.0.0`
