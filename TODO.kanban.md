@@ -4,12 +4,46 @@
 
 # @code-with-von/fumadocs-template/TODO
 
-## To Do
+## Planned
+
+#### Add a web-preview component/feature
+Start date: N/A
+End date: N/A
+
+---
+
+Providing a interactive preview of the expected result will provide a better user experience, so the user does not need to keep going back and forth between the documentation and the expected result.
+
+---
+<!-- id: task-1794048753967-2 -->
+Tags: `improvements`
+<!-- priority: medium -->
+<!-- assignee: vonschappler -->
+
+#### Add Excalidraw support to the template
+Start date: N/A
+End date: N/A
+
+---
+
+Excalidraw is a great tool for creating diagrams, and it would be nice to have support for rendering Excalidraw diagrams as part of the plugins/components we can use in for documentation.
+
+---
+<!-- id: task-1794048753967-3 -->
+Tags: `improvements`
+<!-- priority: medium -->
+<!-- assignee: vonschappler -->
+
+## Blocked
+
+## In Progress
 
 ### Support to Mobile screens
 
-#### Add support to mobile views
+#### Fix support to mobile views
 <!-- id: task-1794048753967-1 -->
+Start date: 2026-11-07
+End date: N/A
 
 ---
 
@@ -17,15 +51,13 @@ When testing responsiveness, some mobile views break the layout, in certain brea
 
 ---
 
-- [ ] Test mobile views
+- [x] Test mobile views
 - [ ] Configure correct breakpoints
 - [ ] Fix CSS definitions to support mobile views where needed
 
 Tags: `improvements`
 <!-- priority: low -->
 <!-- assignee: vonschappler -->
-
-## In Progress
 
 ## Done
 
@@ -38,7 +70,7 @@ End date: 2026-11-
 
 ---
 
-Publish review R@1.0.0 of the current project
+Publish codebase for review R@1.0.0 of the current project
 
 ---
 
@@ -64,8 +96,8 @@ Deploy review R@1.0.0 of the current project
 
 ---
 
-- [ ] Build and test the application locally using ".env.local"
-- [ ] Build and test the application locally using "Infisical"
+- [x] Build and test the application locally using ".env.local"
+- [x] Build and test the application locally using "Infisical"
 - [ ] Create the deployment configuration on Vercel
 - [ ] Connect the deployment configuration to "Infisical"
 - [ ] Deploy to Vercel
