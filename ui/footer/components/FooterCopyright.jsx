@@ -4,7 +4,7 @@ const Copyright = () => {
   return (
     <div
       className={cn(
-        "items-center justify-center gap-0 px-10 text-center font-bold text-von-gray/65 text-xs!",
+        "text-von-gray/65 items-center justify-center gap-0 px-10 text-center text-xs! font-bold",
       )}
     >
       <q>

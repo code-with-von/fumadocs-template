@@ -25,7 +25,7 @@ const FooterSupport = () => {
               href={href}
               target="_blank"
               className={cn(
-                "footer-link transition-all duration-300 hover:-rotate-15 hover:scale-110 hover:text-von-teal!",
+                "footer-link hover:text-von-teal! transition-all duration-300 hover:scale-110 hover:-rotate-15",
               )}
               key={`${id}`}
             >
