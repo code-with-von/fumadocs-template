@@ -1,4 +1,4 @@
-# Changelog:
+# @code-with-von/fumadocs-template/Changelog
 
 ## [R@1.0.0] - 2026-11-
 
@@ -17,8 +17,6 @@
 - Add starting codebase with settings to the project
 - Add custom issue templates on `.github/ISSUE_TEMPLATE/`
 - Add TODO.kanban.md file
+- Deployed to Vercel
 
 </details>
-
----
-
