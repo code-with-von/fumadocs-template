@@ -35,7 +35,7 @@ export default function Layout({ children }: LayoutProps<"/">) {
               {
                 text: "External link",
                 description:
-                  "External link description (will open google.com, as it was just added to showcase how menu work)",
+                  "External link description (will open google.com in a new tab or window, as it was added just to showcase how menu works)",
                 url: "https://google.com",
               },
             ],

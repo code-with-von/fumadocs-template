@@ -27,14 +27,14 @@ const PageNotFound = () => {
     >
       <h1
         className={cn(
-          "bg-linear-45 from-von-white via-von-teal to-von-white bg-clip-text text-center font-black text-6xl text-transparent leading-none tracking-tighter sm:text-7xl xl:text-8xl",
+          "from-von-white via-von-teal to-von-white bg-linear-45 bg-clip-text text-center text-6xl leading-none font-black tracking-tighter text-transparent sm:text-7xl xl:text-8xl",
         )}
       >
         404
       </h1>
       <h2
         className={cn(
-          "bg-linear-45 from-von-white via-von-teal to-von-white bg-clip-text text-center font-black text-4xl text-transparent leading-none tracking-tighter sm:text-5xl xl:text-6xl",
+          "from-von-white via-von-teal to-von-white bg-linear-45 bg-clip-text text-center text-4xl leading-none font-black tracking-tighter text-transparent sm:text-5xl xl:text-6xl",
         )}
       >
         Your curiosity has lead you nowhere...
@@ -42,7 +42,7 @@ const PageNotFound = () => {
       {pathName.startsWith("/docs") && (
         <p
           className={cn(
-            "max-w-xl justify-self-center text-center font-light text-md text-zinc-400 leading-relaxed md:text-lg",
+            "text-md max-w-xl justify-self-center text-center leading-relaxed font-light text-zinc-400 md:text-lg",
           )}
         >
           ... and as access to <strong>{pathName}</strong> is either{" "}
@@ -53,13 +53,13 @@ const PageNotFound = () => {
       )}
       <div
         className={cn(
-          "relative h-80 w-80 rounded-full border-2 border-von-teal/10",
+          "border-von-teal/10 relative size-80 rounded-full border-2",
         )}
       >
         <Image
           src={Image404}
           alt="404"
-          className="h-full w-full rounded-full object-cover"
+          className="size-full rounded-full object-cover"
           fill
         />
       </div>
@@ -70,7 +70,7 @@ const PageNotFound = () => {
       >
         <p
           className={cn(
-            "max-w-xl justify-self-center text-center font-light text-md text-zinc-400 leading-relaxed md:text-lg",
+            "text-md max-w-xl justify-self-center text-center leading-relaxed font-light text-zinc-400 md:text-lg",
           )}
         >
           {pathName.startsWith("/docs") ? null : (
@@ -90,7 +90,7 @@ const PageNotFound = () => {
             onClick={() => router.back()}
             type="button"
             className={cn(
-              "cursor-pointer border-2 border-von-teal/30 px-8 py-4 text-center font-mono font-semibold text-von-teal transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white",
+              "border-von-teal/30 text-von-teal hover:bg-von-teal/30 hover:text-von-white cursor-pointer border-2 px-8 py-4 text-center font-mono font-semibold transition-all duration-200 hover:rounded-lg",
             )}
           >
             [ GO_BACK ]
@@ -98,7 +98,7 @@ const PageNotFound = () => {
           <Link
             href={"/"}
             className={cn(
-              "rounded-none bg-von-teal px-8 py-4 text-center font-bold font-mono text-von-black transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white",
+              "bg-von-teal text-von-black hover:bg-von-teal/30 hover:text-von-white rounded-none px-8 py-4 text-center font-mono font-bold transition-all duration-200 hover:rounded-lg",
             )}
           >
             [ GO_HOME ]
@@ -107,7 +107,7 @@ const PageNotFound = () => {
             href={"https://vonschappler.github.io/"}
             target="_blank"
             className={cn(
-              "cursor-pointer border-2 border-von-teal/30 px-8 py-4 text-center font-mono font-semibold text-von-teal transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white",
+              "border-von-teal/30 text-von-teal hover:bg-von-teal/30 hover:text-von-white cursor-pointer border-2 px-8 py-4 text-center font-mono font-semibold transition-all duration-200 hover:rounded-lg",
             )}
           >
             [ VISIT_MY_WEBSITE ]

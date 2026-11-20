@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <div>
       <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,#16b2ab08_1px,transparent_1px),linear-gradient(to_bottom,#16b2ab08_1px,transparent_1px)] bg-size-[4rem_4rem]">
-        <div className="relative h-full w-full overflow-hidden bg-von-black/50 blur-[6px]">
+        <div className="bg-von-black/50 relative size-full overflow-hidden blur-[6px]">
           <Image
             src={CodeImage}
-            className="pointer-events-none relative inset-0 z-0 h-full w-full object-fit opacity-30"
+            className="object-fit pointer-events-none relative inset-0 z-0 size-full opacity-30"
             alt="Hero background"
             loading="eager"
             fill
@@ -21,9 +21,9 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="relative z-10 mx-auto max-w-10xl items-center px-6 py-6 lg:px-10 lg:py-0">
+      <section className="max-w-10xl relative z-10 mx-auto items-center p-6 lg:px-10 lg:py-0">
         <div className="grid items-center gap-12 xl:grid-cols-2 xl:gap-8 2xl:px-10">
-          <div className="hidden h-full w-full justify-center xl:mt-0 xl:flex">
+          <div className="hidden size-full justify-center xl:mt-0 xl:flex">
             <section className="mx-auto w-full px-1 py-20">
               <HomeTerminal className={null} />
             </section>
@@ -32,12 +32,12 @@ export default function Home() {
           <div className="space-y-4 px-1 py-5 text-center xl:text-end">
             <Version isCurrent version="REVIEW r@1.0.0" />
 
-            <h1 className="bg-linear-45 from-von-white via-von-teal to-von-white bg-clip-text text-center font-black text-5xl text-transparent leading-none tracking-tighter transition-all duration-300 sm:text-7xl xl:text-right">
+            <h1 className="from-von-white via-von-teal to-von-white bg-linear-45 bg-clip-text text-center text-5xl leading-none font-black tracking-tighter text-transparent transition-all duration-300 sm:text-7xl xl:text-right">
               Fumadocs <br />
               base template
             </h1>
 
-            <p className="max-w-xl justify-self-center text-center font-light text-lg text-zinc-400 leading-relaxed transition-all duration-300 md:text-lg xl:justify-self-end xl:text-right">
+            <p className="max-w-xl justify-self-center text-center text-lg leading-relaxed font-light text-zinc-400 transition-all duration-300 md:text-lg xl:justify-self-end xl:text-right">
               This is a base Fumadocs template created by{" "}
               <strong>von Schappler</strong> to help help users to start
               documenting their projects in an easy way!
@@ -46,7 +46,7 @@ export default function Home() {
             <div className="flex flex-wrap justify-center gap-4 pt-4 xl:justify-end">
               <Link
                 href="/docs"
-                className="rounded-none bg-von-teal px-8 py-4 font-bold font-mono text-von-black transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white"
+                className="bg-von-teal text-von-black hover:bg-von-teal/30 hover:text-von-white rounded-none px-8 py-4 font-mono font-bold transition-all duration-200 hover:rounded-lg"
               >
                 [ CHECK_THE_CONCEPT ]
               </Link>
@@ -54,7 +54,7 @@ export default function Home() {
               {process.env.NODE_ENV === "development" && (
                 <Link
                   href="/docs/03-plugins/01-fc-comp"
-                  className="border-2 border-von-teal/30 px-8 py-4 font-mono font-semibold text-von-teal transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white"
+                  className="border-von-teal/30 text-von-teal hover:bg-von-teal/30 hover:text-von-white border-2 px-8 py-4 font-mono font-semibold transition-all duration-200 hover:rounded-lg"
                 >
                   [ PLUGINS_REFERENCE ]
                 </Link>
@@ -64,11 +64,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative z-10 grid w-full grid-cols-1 items-center justify-center border-zinc-800 border-t-2 bg-von-black px-10 py-10 md:grid-cols-2 md:divide-x-2">
-        <h2 className="mb-5 text-center font-extrabold text-3xl text-white tracking-tight sm:text-4xl md:col-span-2">
+      <section className="bg-von-black relative z-10 grid w-full grid-cols-1 items-center justify-center border-t-2 border-zinc-800 p-10 md:grid-cols-2 md:divide-x-2">
+        <h2 className="mb-5 text-center text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:col-span-2">
           Current state of mind
         </h2>
-        <div className="flex h-full w-full flex-col justify-center pb-5 leading-relaxed md:px-10 md:pb-0">
+        <div className="flex size-full flex-col justify-center pb-5 leading-relaxed md:px-10 md:pb-0">
           <p className="text-center md:text-left">
             I'm currently focused on improving my skills in web development and
             streaming. I'm also working on some personal projects that I hope to
@@ -81,26 +81,26 @@ export default function Home() {
             current tasks.
           </p>
         </div>
-        <div className="mx-auto rounded-lg border border-foreground/50 bg-von-black p-4 font-mono text-[12px] text-von-teal sm:left-12">
+        <div className="border-foreground/50 bg-von-black text-von-teal mx-auto rounded-lg border p-4 font-mono text-[12px] sm:left-12">
           <SpotifyWidget />
         </div>
       </section>
 
-      <section className="relative z-10 border-zinc-800 border-t-2 bg-von-black py-10">
+      <section className="bg-von-black relative z-10 border-t-2 border-zinc-800 py-10">
         <div className="mb-5 text-center">
-          <h2 className="font-extrabold text-3xl text-white tracking-tight sm:text-4xl">
+          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             Features
           </h2>
         </div>
-        <div className="mx-auto grid max-w-10xl divide-y-2 divide-zinc-800 xl:grid-cols-3 xl:divide-x-2 xl:divide-y-0">
+        <div className="max-w-10xl mx-auto grid divide-y-2 divide-zinc-800 xl:grid-cols-3 xl:divide-x-2 xl:divide-y-0">
           <div className="group col-span-3 p-10 transition-colors duration-300 hover:bg-zinc-900/50 md:col-span-1 lg:p-14">
-            <div className="mb-6 font-mono text-von-teal text-xs tracking-widest">
+            <div className="text-von-teal mb-6 font-mono text-xs tracking-widest">
               [ PLUGINS_AND_CUSTOM_COMPONENTS ]{" "}
             </div>
-            <h3 className="mb-4 font-bold text-2xl text-white tracking-tight transition-colors group-hover:text-von-teal">
+            <h3 className="group-hover:text-von-teal mb-4 text-2xl font-bold tracking-tight text-white transition-colors">
               <strong>Fumadocs</strong> plugins and other unique components
             </h3>
-            <p className="font-light text-zinc-400 leading-relaxed">
+            <p className="leading-relaxed font-light text-zinc-400">
               This template uses and documents how to use the external and most
               of the provided <strong>Fumadocs custom components</strong> to
               ensure and allow the best customization as possible!
@@ -109,14 +109,14 @@ export default function Home() {
               {process.env.NODE_ENV === "development" ? (
                 <Link
                   href="/docs/03-plugins/01-fc-comp"
-                  className="border-2 border-von-teal/30 px-8 py-4 font-mono font-semibold text-von-teal transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white"
+                  className="border-von-teal/30 text-von-teal hover:bg-von-teal/30 hover:text-von-white border-2 px-8 py-4 font-mono font-semibold transition-all duration-200 hover:rounded-lg"
                 >
                   [ OPEN_PLUGINS_LIST ]
                 </Link>
               ) : (
                 <Link
                   href="https://github.com/code-with-von/fumadocs-template"
-                  className="border-2 border-von-teal/30 px-8 py-4 font-mono font-semibold text-von-teal transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white"
+                  className="border-von-teal/30 text-von-teal hover:bg-von-teal/30 hover:text-von-white border-2 px-8 py-4 font-mono font-semibold transition-all duration-200 hover:rounded-lg"
                 >
                   [ DOWNLOAD_THE_PROJECT ]
                 </Link>
@@ -125,13 +125,13 @@ export default function Home() {
           </div>
 
           <div className="group col-span-3 p-10 transition-colors duration-300 hover:bg-zinc-900/50 md:col-span-1 lg:p-14">
-            <div className="mb-6 font-mono text-von-teal text-xs tracking-widest">
+            <div className="text-von-teal mb-6 font-mono text-xs tracking-widest">
               [ TIPS ]{" "}
             </div>
-            <h3 className="mb-4 font-bold text-2xl text-white tracking-tight transition-colors group-hover:text-von-teal">
+            <h3 className="group-hover:text-von-teal mb-4 text-2xl font-bold tracking-tight text-white transition-colors">
               File system examples
             </h3>
-            <p className="font-light text-zinc-400 leading-relaxed">
+            <p className="leading-relaxed font-light text-zinc-400">
               In the current revision, there is a total of{" "}
               <strong>three examples</strong>, with both recommended file /
               folder structure as well as a preview on what to expect as the
@@ -140,7 +140,7 @@ export default function Home() {
             <div className="mt-2 flex w-full justify-end">
               <Link
                 href="/docs/04-examples"
-                className="border-2 border-von-teal/30 px-8 py-4 font-mono font-semibold text-von-teal transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white"
+                className="border-von-teal/30 text-von-teal hover:bg-von-teal/30 hover:text-von-white border-2 px-8 py-4 font-mono font-semibold transition-all duration-200 hover:rounded-lg"
               >
                 [ CHECK_EXAMPLES ]
               </Link>
@@ -148,13 +148,13 @@ export default function Home() {
           </div>
 
           <div className="group col-span-3 p-10 transition-colors duration-300 hover:bg-zinc-900/50 md:col-span-1 lg:p-14">
-            <div className="mb-6 font-mono text-von-teal text-xs tracking-widest">
+            <div className="text-von-teal mb-6 font-mono text-xs tracking-widest">
               [ LICENSES_OF_USE ]
             </div>
-            <h3 className="mb-4 font-bold text-2xl text-white tracking-tight transition-colors group-hover:text-von-teal">
+            <h3 className="group-hover:text-von-teal mb-4 text-2xl font-bold tracking-tight text-white transition-colors">
               EULA and GNU
             </h3>
-            <p className="font-light text-zinc-400 leading-relaxed">
+            <p className="leading-relaxed font-light text-zinc-400">
               This is a base template free to use, as long as the specifications
               in our license section are fulfilled. Both licenses are already
               added to the project, so you don't need to search for them
@@ -162,8 +162,8 @@ export default function Home() {
             </p>
             <div className="mt-2 flex w-full justify-end">
               <Link
-                href="/docs/01-licenses/01-eula"
-                className="border-2 border-von-teal/30 px-8 py-4 font-mono font-semibold text-von-teal transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white"
+                href="/docs/01-licenses"
+                className="border-von-teal/30 text-von-teal hover:bg-von-teal/30 hover:text-von-white border-2 px-8 py-4 font-mono font-semibold transition-all duration-200 hover:rounded-lg"
               >
                 [ READ_THE_LICENSES ]
               </Link>
@@ -174,7 +174,7 @@ export default function Home() {
         <div className="mt-4 flex justify-center">
           <Link
             href="/docs"
-            className="relative w-fit rounded-none bg-von-teal px-8 py-4 font-bold font-mono text-von-black transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white"
+            className="bg-von-teal text-von-black hover:bg-von-teal/30 hover:text-von-white relative w-fit rounded-none px-8 py-4 font-mono font-bold transition-all duration-200 hover:rounded-lg"
           >
             [ VIEW_ALL ]
           </Link>
@@ -184,7 +184,7 @@ export default function Home() {
       <section className="relative z-10 mx-auto max-w-5xl px-6 py-24">
         <StaticTerminal className={null}>
           <div className="space-y-6 p-8 text-center md:p-12">
-            <h2 className="font-extrabold text-3xl text-white tracking-tight sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Ready to delve into this world?
             </h2>
             <p className="mx-auto max-w-xl font-light text-zinc-400">
@@ -197,7 +197,7 @@ export default function Home() {
             <div className="pt-4">
               <Link
                 href="/docs"
-                className="rounded-none bg-von-teal px-8 py-4 font-bold font-mono text-von-black transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white"
+                className="bg-von-teal text-von-black hover:bg-von-teal/30 hover:text-von-white rounded-none px-8 py-4 font-mono font-bold transition-all duration-200 hover:rounded-lg"
               >
                 [ docs --open-all ]
               </Link>

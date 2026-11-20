@@ -1,6 +1,6 @@
 /*
   APPLIED_LINT_RULE by @vonschappler
-  biome-ignore-all lint/complexity/noImportantStyles: this is used as this comes from a 3rd party code
+  biome-ignore-all lint/complexity/noImportantStyles: imported from 3rd party
 */
 
 @import "tailwindcss";
@@ -174,19 +174,24 @@ footer {
   @apply text-xl font-bold transition-all duration-300 ease-in-out md:text-3xl;
 } */
 
-[role="tabpanel"] {
+/*  {
   @apply bg-transparent p-0;
-  & > figure:only-child {
+  & > figure {
     @apply m-0! p-0!;
   }
+} */
+
+[role="tabpanel"],
+[id$="-content-output"] {
+  @apply bg-transparent;
 }
+
+/* & figure.shiki {
+  @apply border! border-von-teal/50!;
+} */
 
 pre > code > span.line {
   @apply text-pretty! overflow-x-hidden max-w-full;
-}
-
-[id$="-content-output"] {
-  @apply bg-transparent p-4;
 }
 
 #nd-sidebar,
@@ -212,5 +217,15 @@ pre > code > span.line {
 section.footnotes {
   & ol {
     @apply text-sm font-light text-von-gray;
+  }
+}
+
+figure {
+  @apply m-1! p-2! pb-0! border border-von-teal/50! rounded-lg;
+  &.shiki {
+    @apply m-0! p-0! bg-von-teal/7 border-0;
+  }
+  & > figcaption {
+    @apply text-xs font-light text-center text-von-teal border-t border-von-teal/25 p-0!;
   }
 }
