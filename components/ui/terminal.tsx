@@ -275,13 +275,13 @@ export function Terminal({
       <div className="overflow-hidden rounded-lg border border-neutral-800 bg-neutral-900 shadow-2xl">
         <div className="flex items-center gap-2 bg-neutral-800 px-4 py-3">
           <div className="flex items-center gap-1.5">
-            <div className="h-3 w-3 rounded-full bg-red-500/40" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500/40" />
-            <div className="h-3 w-3 rounded-full bg-green-500/40" />
+            <div className="size-3 rounded-full bg-red-500/40" />
+            <div className="size-3 rounded-full bg-yellow-500/40" />
+            <div className="size-3 rounded-full bg-green-500/40" />
           </div>
 
           <div className="flex-1 text-start">
-            <span className="truncate text-neutral-400 text-xs">
+            <span className="truncate text-xs text-neutral-400">
               {username}
               {subject && ` - ${subject}`}
             </span>
@@ -293,7 +293,7 @@ export function Terminal({
           className="no-visible-scrollbar h-80 overflow-y-auto p-4 font-mono"
         >
           {lines.map((line, index) => (
-            <div key={index} className="whitespace-pre-wrap leading-relaxed">
+            <div key={index} className="leading-relaxed whitespace-pre-wrap">
               {line.type === "command" ? (
                 <>
                   {prompt}
@@ -315,7 +315,7 @@ export function Terminal({
           ))}
 
           {(phase === "typing" || phase === "clearing") && (
-            <div className="whitespace-pre-wrap leading-relaxed">
+            <div className="leading-relaxed whitespace-pre-wrap">
               {prompt}
 
               {phase === "typing" ? (
@@ -329,7 +329,7 @@ export function Terminal({
           )}
 
           {phase === "waitingForCls" && (
-            <div className="whitespace-pre-wrap leading-relaxed">
+            <div className="leading-relaxed whitespace-pre-wrap">
               {prompt}
               {cursor()}
             </div>

@@ -62,7 +62,7 @@ export function TabsList(
     <Unstyled.TabsList
       {...props}
       className={cn(
-        "not-prose flex gap-3.5 overflow-x-auto px-4 text-fd-secondary-foreground",
+        "not-prose text-fd-secondary-foreground flex gap-3.5 overflow-x-auto px-4",
         props.className,
       )}
     />
@@ -76,7 +76,7 @@ export function TabsTrigger(
     <Unstyled.TabsTrigger
       {...props}
       className={cn(
-        "inline-flex items-center gap-2 whitespace-nowrap border-transparent border-b py-2 font-medium text-fd-muted-foreground text-sm transition-colors hover:text-fd-accent-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=active]:border-fd-primary data-[state=active]:text-fd-primary [&_svg]:size-4",
+        "text-fd-muted-foreground hover:text-fd-accent-foreground data-[state=active]:border-fd-primary data-[state=active]:text-fd-primary inline-flex items-center gap-2 border-b border-transparent py-2 text-sm font-medium whitespace-nowrap transition-colors disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4",
         props.className,
       )}
     />
@@ -99,7 +99,7 @@ export function Tabs({
     <Unstyled.Tabs
       ref={ref}
       className={cn(
-        "my-4 flex flex-col overflow-hidden rounded-xl border bg-fd-secondary",
+        "bg-fd-secondary my-4 flex flex-col overflow-hidden rounded-xl border",
         className,
       )}
       value={value}
@@ -112,7 +112,7 @@ export function Tabs({
       {items && (
         <TabsList>
           {label && (
-            <span className="my-auto me-auto font-medium text-sm">{label}</span>
+            <span className="my-auto me-auto text-sm font-medium">{label}</span>
           )}
           {items.map((item) => (
             <TabsTrigger key={item} value={escapeValue(item)}>
@@ -163,7 +163,7 @@ export function TabsContent({
       value={value}
       forceMount
       className={cn(
-        "prose-no-margin rounded-xl bg-fd-background p-4 text-[0.9375rem] outline-none data-[state=inactive]:hidden [&>figure:only-child]:-m-4 [&>figure:only-child]:border-none",
+        "prose-no-margin bg-fd-background rounded-xl p-4 text-[0.9375rem] outline-none data-[state=inactive]:hidden [&>figure:only-child]:-m-4 [&>figure:only-child]:border-none",
         className,
       )}
       {...props}

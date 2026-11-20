@@ -1,6 +1,7 @@
 /**
  * APPLIED_LINT_RULE by @vonschappler
  * biome-ignore-all lint/suspicious/noExplicitAny: imported from a 3rd party
+ * biome-ignore-all lint/correctness/noComponentHookFactories: imported from a 3rd party
  */
 
 import { APIPage } from "@components/api-page";

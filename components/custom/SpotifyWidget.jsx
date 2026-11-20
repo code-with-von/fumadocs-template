@@ -30,11 +30,11 @@ const SpotifyWidget = () => {
       [ {`Currently_listening_to`.toUpperCase()} ]
       <div
         className={cn(
-          "relative flex h-32.5 w-97.5 flex-col border border-foreground/65",
+          "border-foreground/65 relative flex h-32.5 w-97.5 flex-col border",
         )}
       >
         {isLoading ? (
-          <div className="flex h-full w-full items-center justify-center">
+          <div className="flex size-full items-center justify-center">
             <Loading />
           </div>
         ) : (
@@ -54,7 +54,7 @@ const SpotifyWidget = () => {
         <Link
           href="https://spotify-github-profile.kittinanx.com/api/view?uid=12150179423&redirect=true"
           target="_blank"
-          className="rounded-none bg-von-teal px-2 py-1 font-bold font-mono text-von-black transition-all duration-200 hover:rounded-lg hover:bg-von-teal/30 hover:text-von-white"
+          className="bg-von-teal text-von-black hover:bg-von-teal/30 hover:text-von-white rounded-none px-2 py-1 font-mono font-bold transition-all duration-200 hover:rounded-lg"
         >
           [ LISTEN_WITH_ME ]
         </Link>

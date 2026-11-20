@@ -11,7 +11,7 @@ import { FileIcon, FolderIcon, FolderOpen } from "lucide-react";
 import { type HTMLAttributes, type ReactNode, useState } from "react";
 
 const itemVariants = cva(
-  "flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-fd-accent hover:text-fd-accent-foreground [&_svg]:size-4",
+  "hover:bg-fd-accent hover:text-fd-accent-foreground flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm [&_svg]:size-4",
 );
 
 export function Files({
@@ -20,7 +20,7 @@ export function Files({
 }: HTMLAttributes<HTMLDivElement>): React.ReactElement {
   return (
     <div
-      className={cn("not-prose rounded-md border bg-fd-card p-2", className)}
+      className={cn("not-prose bg-fd-card rounded-md border p-2", className)}
       {...props}
     >
       {props.children}

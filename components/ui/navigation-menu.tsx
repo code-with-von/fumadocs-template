@@ -48,7 +48,7 @@ export function NavigationMenuContent({
   return (
     <Primitive.Content
       className={cn(
-        "fd-scroll-container absolute inset-x-0 top-0 max-h-[80svh] overflow-auto data-[motion=from-end]:animate-fd-enterFromRight data-[motion=from-start]:animate-fd-enterFromLeft data-[motion=to-end]:animate-fd-exitToRight data-[motion=to-start]:animate-fd-exitToLeft",
+        "fd-scroll-container data-[motion=from-end]:animate-fd-enterFromRight data-[motion=from-start]:animate-fd-enterFromLeft data-[motion=to-end]:animate-fd-exitToRight data-[motion=to-start]:animate-fd-exitToLeft absolute inset-x-0 top-0 max-h-[80svh] overflow-auto",
         className,
       )}
       {...props}
@@ -68,7 +68,7 @@ export function NavigationMenuViewport({
       <Primitive.Viewport
         {...props}
         className={cn(
-          "relative h-(--radix-navigation-menu-viewport-height) w-full origin-[top_center] overflow-hidden transition-[width,height] duration-300 data-[state=closed]:animate-fd-nav-menu-out data-[state=open]:animate-fd-nav-menu-in",
+          "data-[state=closed]:animate-fd-nav-menu-out data-[state=open]:animate-fd-nav-menu-in relative h-(--radix-navigation-menu-viewport-height) w-full origin-[top_center] overflow-hidden transition-[width,height] duration-300",
           className,
         )}
       />
