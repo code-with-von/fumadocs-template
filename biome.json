@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.5.12/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.6.8/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -26,13 +26,13 @@
         "noReactPropAssignments": "off"
       },
       "nursery": {
-        "useSortedClasses": {
-          "level": "warn",
-          "fix": "safe",
-          "options": {
-            "attributes": ["className"],
-            "functions": ["cn"]
-          }
+        "useTailwindShorthandClasses": {
+          "level": "info",
+          "fix": "safe"
+        },
+        "useTailwindSortedClasses": {
+          "level": "info",
+          "fix": "safe"
         }
       }
     },
