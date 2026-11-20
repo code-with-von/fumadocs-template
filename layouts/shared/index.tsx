@@ -1,5 +1,5 @@
 /**
- * APPLY_LINT_RULE by @vonschappler
+ * APPLIED_LINT_RULE by @vonschappler
  * biome-ignore-all lint/a11y/noSvgWithoutTitle: false-positive
  */
 
@@ -108,7 +108,7 @@ const defaultTransform: GetLayoutTabsOptions["transform"] = (option, node) => {
   return {
     ...option,
     icon: (
-      <div className="size-full max-md:rounded-md max-md:border max-md:bg-fd-secondary max-md:p-1.5 [&_svg]:size-full">
+      <div className="max-md:bg-fd-secondary size-full max-md:rounded-md max-md:border max-md:p-1.5 [&_svg]:size-full">
         {node.icon}
       </div>
     ),

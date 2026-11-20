@@ -63,7 +63,7 @@ function FooterItem({ item, index }: { item: Item; index: 0 | 1 }) {
     <Link
       href={item.url}
       className={cn(
-        "@max-lg:col-span-full flex flex-col gap-2 rounded-lg border p-4 text-sm transition-colors hover:bg-fd-accent/80 hover:text-fd-accent-foreground",
+        "hover:bg-fd-accent/80 hover:text-fd-accent-foreground flex flex-col gap-2 rounded-lg border p-4 text-sm transition-colors @max-lg:col-span-full",
         index === 1 && "text-end",
       )}
     >
@@ -76,7 +76,7 @@ function FooterItem({ item, index }: { item: Item; index: 0 | 1 }) {
         <Icon className="-mx-1 size-4 shrink-0 rtl:rotate-180" />
         <p>{item.name}</p>
       </div>
-      <p className="truncate text-fd-muted-foreground">
+      <p className="text-fd-muted-foreground truncate">
         {item.description ??
           (index === 0 ? t("Previous Page") : t("Next Page"))}
       </p>

@@ -1,5 +1,5 @@
 /**
- * APPLY_LINT_RULE by @vonschappler
+ * APPLIED_LINT_RULE by @vonschappler
  * biome-ignore-all lint/suspicious/noArrayIndexKey: imported 3rd party file
  */
 
@@ -67,7 +67,7 @@ export function FullSearchTrigger({
       data-search-full=""
       {...props}
       className={cn(
-        "inline-flex items-center gap-2 rounded-lg border bg-fd-secondary/50 p-1.5 ps-2 text-fd-muted-foreground text-sm transition-colors hover:bg-fd-accent hover:text-fd-accent-foreground",
+        "bg-fd-secondary/50 text-fd-muted-foreground hover:bg-fd-accent hover:text-fd-accent-foreground inline-flex items-center gap-2 rounded-lg border p-1.5 ps-2 text-sm transition-colors",
         props.className,
       )}
       onClick={() => {
@@ -78,7 +78,7 @@ export function FullSearchTrigger({
       {t("Search")}
       <div className="ms-auto inline-flex gap-0.5">
         {hotKey.map((k, i) => (
-          <kbd key={i} className="rounded-md border bg-fd-background px-1.5">
+          <kbd key={i} className="bg-fd-background rounded-md border px-1.5">
             {k.display}
           </kbd>
         ))}

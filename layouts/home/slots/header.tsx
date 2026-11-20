@@ -32,7 +32,7 @@ import { cn } from "@/lib/cn";
 export const navItemVariants = cva("[&_svg]:size-4", {
   variants: {
     variant: {
-      main: "inline-flex items-center gap-1 p-2 text-fd-muted-foreground transition-colors hover:text-fd-accent-foreground data-[active=true]:text-fd-primary",
+      main: "text-fd-muted-foreground hover:text-fd-accent-foreground data-[active=true]:text-fd-primary inline-flex items-center gap-1 p-2 transition-colors",
       button: buttonVariants({
         color: "secondary",
         className: "gap-1.5",
@@ -140,7 +140,7 @@ export function Header(props: ComponentProps<"header">) {
                   <slots.languageSelect.root>
                     <Languages className="size-5" />
                     {slots.languageSelect.text && <slots.languageSelect.text />}
-                    <ChevronDown className="size-3 text-fd-muted-foreground" />
+                    <ChevronDown className="text-fd-muted-foreground size-3" />
                   </slots.languageSelect.root>
                 )}
                 {slots.themeSwitch && <slots.themeSwitch />}
@@ -215,7 +215,7 @@ function NavigationMenuLinkItem({
 
       const {
         banner = child.icon ? (
-          <div className="w-fit rounded-md border bg-fd-muted p-1 [&_svg]:size-4">
+          <div className="bg-fd-muted w-fit rounded-md border p-1 [&_svg]:size-4">
             {child.icon}
           </div>
         ) : null,
@@ -229,14 +229,14 @@ function NavigationMenuLinkItem({
             external={child.external}
             {...rest}
             className={cn(
-              "flex flex-col gap-2 rounded-lg border bg-fd-card p-3 transition-colors hover:bg-fd-accent/80 hover:text-fd-accent-foreground",
+              "bg-fd-card hover:bg-fd-accent/80 hover:text-fd-accent-foreground flex flex-col gap-2 rounded-lg border p-3 transition-colors",
               rest.className,
             )}
           >
             {rest.children ?? (
               <>
                 {banner}
-                <p className="font-medium text-base">{child.text}</p>
+                <p className="text-base font-medium">{child.text}</p>
                 <p className="text-fd-muted-foreground text-sm empty:hidden">
                   {child.description}
                 </p>
@@ -300,7 +300,7 @@ function MobileNavigationMenuLinkItem({
 
     return (
       <div className={cn("mb-4 flex flex-col", props.className)}>
-        <p className="mb-1 text-fd-muted-foreground text-sm">
+        <p className="text-fd-muted-foreground mb-1 text-sm">
           {item.url ? (
             <NavigationMenuLink asChild>
               <Link href={item.url} external={item.external}>

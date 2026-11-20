@@ -1,5 +1,5 @@
 /**
- * APPLY_LINT_RULE by @vonschappler
+ * APPLIED_LINT_RULE by @vonschappler
  * biome-ignore-all lint/suspicious/useIterableCallbackReturn: this is an imported file from 3rd party library
  */
 
@@ -13,7 +13,7 @@ import { useTheme } from "next-themes";
 import { type ComponentProps, useEffect, useState } from "react";
 import { flushSync } from "react-dom";
 
-const itemVariants = cva("size-6.5 p-1.5 text-fd-muted-foreground", {
+const itemVariants = cva("text-fd-muted-foreground size-6.5 p-1.5", {
   variants: {
     active: {
       true: "bg-fd-accent text-fd-accent-foreground",

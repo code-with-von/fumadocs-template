@@ -34,7 +34,7 @@ export function LanguageSelect({
         aria-label={t("Choose a language", { note: "aria-label" })}
         className={cn(
           buttonVariants({ variant }),
-          "gap-1.5 p-1.5 data-[state=open]:bg-fd-accent",
+          "data-[state=open]:bg-fd-accent gap-1.5 p-1.5",
           className,
         )}
         {...rest}
@@ -42,7 +42,7 @@ export function LanguageSelect({
         {children}
       </PopoverTrigger>
       <PopoverContent className="flex flex-col gap-0.5 p-1">
-        <p className="p-2 font-medium text-fd-muted-foreground text-xs">
+        <p className="text-fd-muted-foreground p-2 text-xs font-medium">
           {chooseLanguage}
         </p>
         {context.locales.map((item) => (
