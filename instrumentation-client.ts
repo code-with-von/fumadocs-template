@@ -1,6 +1,7 @@
 /**
  * APPLIED_LINT_RULE by @vonschappler
- * biome-ignore-all lint/style/noNonNullAssertion: code provided by the official documentation */
+ * biome-ignore-all lint/style/noNonNullAssertion: code provided by the official documentation
+ */
 
 import posthog from "posthog-js";
 
