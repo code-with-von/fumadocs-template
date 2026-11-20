@@ -20,17 +20,17 @@
               "default": "World"
             }
           }
-        ]
-      }
-    }
-  },
-  "responses": {
-    "200": {
-      "description": "Successful response",
-      "content": {
-        "application/json": {
-          "schema": {
-            "$ref": "#/components/schemas/HelloResponse"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HelloResponse"
+                }
+              }
+            }
           }
         }
       }
