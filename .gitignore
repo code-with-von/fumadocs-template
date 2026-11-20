@@ -30,5 +30,6 @@ next-env.d.ts
 
 .vercel
 .env*
+.notes
 !.env.example
 .infisical.json
