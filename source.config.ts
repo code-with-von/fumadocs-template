@@ -37,6 +37,8 @@ export default defineConfig({
         dark: "andromeeda",
       },
       transformers: [
+        // APPLIED_LINT_RULE by @vonschappler - ignore ts for this line
+        // @ts-ignore
         ...rehypeCodeDefaultOptions.transformers,
         transformerTwoslash({
           langAlias: {
