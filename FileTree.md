@@ -7,9 +7,10 @@
 │   │   ├── ⚙️ 02-typos.yml
 │   │   ├── ⚙️ 03-faq.yml
 │   │   └── ⚙️ config.yml
-│   └── 📁 workflows
-│       ├── ⚙️ checks.yml
-│       └── ⚙️ deploy.yml
+│   ├── 📁 workflows
+│   │   ├── ⚙️ checks.yml
+│   │   └── ⚙️ deploy.yml
+│   └── 📝 pull_request_template.md
 ├── 📁 app
 │   ├── 📁 (home)
 │   │   ├── 📁 a-link
@@ -116,6 +117,7 @@
 │       ├── 📁 01-licenses
 │       │   ├── 📄 01-eula.mdx
 │       │   ├── 📄 02-gnu.mdx
+│       │   ├── 📄 index.mdx
 │       │   └── ⚙️ meta.json
 │       ├── 📁 02-file-structure
 │       │   ├── 📁 file-details
@@ -140,6 +142,7 @@
 │       │   │   ├── 📄 05-table-types.mdx
 │       │   │   ├── 📄 06-story.mdx
 │       │   │   ├── 📄 07-open-api.mdx
+│       │   │   ├── 📄 08-banner.mdx
 │       │   │   └── 📄 index.mdx
 │       │   ├── 📁 02-cc-comp
 │       │   │   ├── 📄 01-animated-terminal.mdx
@@ -181,13 +184,13 @@
 │       │   ├── 📁 03-example-c
 │       │   │   ├── 📁 preview
 │       │   │   │   ├── 📁 grouped-a
+│       │   │   │   │   ├── 📁 grouped-b
+│       │   │   │   │   │   ├── 📄 01-file-e.mdx
+│       │   │   │   │   │   ├── 📄 02-file-f.mdx
+│       │   │   │   │   │   └── ⚙️ meta.json
 │       │   │   │   │   ├── 📄 01-file-c.mdx
 │       │   │   │   │   ├── 📄 02-file-d.mdx
 │       │   │   │   │   └── 📄 index.mdx
-│       │   │   │   ├── 📁 grouped-b
-│       │   │   │   │   ├── 📄 01-file-e.mdx
-│       │   │   │   │   ├── 📄 02-file-f.mdx
-│       │   │   │   │   └── ⚙️ meta.json
 │       │   │   │   ├── 📁 grouped-c
 │       │   │   │   │   ├── 📄 01-file-g.mdx
 │       │   │   │   │   ├── 📄 02-file-h.mdx
