@@ -39,16 +39,19 @@ If we don't add the **index.mdx** at the root of **content/docs**, accessing thi
 
 ---
 
-### 1. Omission of **index.mdx** in **grouped-b**:
+### 1. Omission of **index.mdx** in **nests/groups** of files:
 
-The omission the **index.mdx** file inside **grouped-b** will ONLY change the behavior of the referenced navigation item **(remember that each folder/file adds a navigation item into the project)**. 
+The omission the **index.mdx** file inside **nests/groups** of files will ONLY change the behavior of the referenced navigation item.
 
-This means: clicking on the item, instead of both expanding a list with the nested pages while displaying the landing page of that nested group, it just expands the ne list of pages.
+<Callout title="IMPORTANT" type='error'>
+ Before proceeding, remember that each **folder** an **expandable navigation item** while each **MDX** file a **page**. 
+</Callout>
 
-So in this example the expected behaviors are:
-- [x] accessing the **/docs** route renders the **index.mdx** at the root level of **content/docs** folder
-- [x] clicking on the navigation bar under **grouped-a** will both load the **index.mdx** inside **grouped-a** and expand the navigation list showing the pages that **01-file-c.mdx** and **02-file-d.mdx** produce
-- [x] clicking on the navigation bar under **grouped-b** will ONLY expand the navigation list showing the pages that **01-file-e.mdx** and **02-file-f.mdx** produce
+#
+To clarify, in this example the expected behaviors when clicking on the navigation are:
+- [x] index.mdx simulates the **index** page of the documentation, placed always at **the root** of the folder **content/docs**
+- [x] clicking on the navigation item **grouped-a** will **BOTH** load the **index.mdx** inside **grouped-a** and expand the group with the list of pages inside it
+- [x] clicking on the navigation item **grouped-b** will **ONLY** expand the group with the list of pages inside it
 
 <Callout title="NOTE">
   You can omit the **index** file on any group to reproduce the same behavior when needed, but when doing so, the group can **ONLY** have a custom name and/or icon with the addition of the file **meta.json** - details about this file in the next section - in case this customization is needed.

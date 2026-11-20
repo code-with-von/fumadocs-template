@@ -88,7 +88,7 @@ The creation of the terminal depends on two steps:
 
 Below we have an example on how to use the terminal.
 
-<Tabs items={['Terminal configuration', 'MDX', 'Output']}>
+<Tabs items={['Terminal configuration', 'Importing', 'Output']}>
 <Tab value="Terminal configuration">
 ```js title='terminal.config.js'
 /**
@@ -154,11 +154,10 @@ export const restartDelay = 1000;
 ```
 </Tab>
 
-<Tab value="MDX">
+<Tab value="Importing">
 ```mdx
 import {chart} from 'path/to/terminal.config.js'
 
-### Animated terminal preview
 <Terminal
   commands={commands}
   outputs={outputs}
@@ -172,6 +171,9 @@ import {chart} from 'path/to/terminal.config.js'
   restartDelay={restartDelay}
 />
 ```
+<Callout title='NOTE'>
+  This component can be imported in both **JSX**, **TSX** and **MDX** files.
+</Callout>
 </Tab>
 <Tab value="Output">
   ### Animated terminal preview [!toc]
