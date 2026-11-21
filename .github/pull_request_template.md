@@ -6,7 +6,8 @@
 
 - **Associated Issue**:
   <!-- Replace [Issue Number] by the number of the issue -->
-  > PRDOS-`[Issue Number]`
+  <!-- If there is no issue number, use No issue assigned -->
+  > `[Issue Number]`
 
 - **Responsible**:
   <!-- Replace [Username] by your github username -->

@@ -11,7 +11,7 @@ body:
     attributes:
       value: |
         > Use this form to provide details about the plugin/component you would like to see implemented by von Schappler.
-  
+
   - type: input
     id: addon-name
     validations:
@@ -65,10 +65,10 @@ body:
   - type: checkboxes
     id: consent
     attributes:
-      label: '5. Consentient:' 
+      label: "5. Consentient:"
       options:
         - label: By selecting "Yes" and providing my e-mail, I understand that the developer won't be using it for any other purposes than contacting me about this issue.
-  
+
   - type: markdown
     attributes:
       value: |
@@ -78,7 +78,7 @@ body:
   - type: checkboxes
     id: terms
     attributes:
-      label: '6. Agreement:' 
+      label: "6. Agreement:"
       options:
         - label: I agree that by submitting this report the information listed here are suggestions that aim to improve the application.
           required: true

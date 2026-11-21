@@ -38,7 +38,7 @@ export default defineConfig({
       },
       transformers: [
         // APPLIED_LINT_RULE by @vonschappler - ignore ts for this line
-        // @ts-ignore
+        // @ts-expect-error
         ...rehypeCodeDefaultOptions.transformers,
         transformerTwoslash({
           langAlias: {

@@ -6,7 +6,7 @@ fetchRetryMaxtimeout: 120000
 shellEmulator: true
 
 allowBuilds:
-  '@infisical/cli': true
+  "@infisical/cli": true
   core-js: true
   esbuild: true
   sharp: true
