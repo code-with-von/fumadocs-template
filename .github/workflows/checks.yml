@@ -92,3 +92,4 @@ jobs:
         env:
           NEXT_PUBLIC_POSTHOG_KEY: ${{ secrets.POSTHOG_KEY }}
           NEXT_PUBLIC_POSTHOG_HOST: ${{ secrets.POSTHOG_HOST }}
+          NEXT_PUBLIC_SPOTIFY_URL: ${{ secrets.SPOTIFY_URL}}
