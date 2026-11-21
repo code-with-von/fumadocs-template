@@ -11,7 +11,7 @@ body:
     attributes:
       value: |
         > Provide as much details as possible about the problem(s) found, filling the fields below. The more details you provide, the easier it will be for us to fix them.
-  
+
   - type: textarea
     id: type
     validations:
@@ -19,7 +19,7 @@ body:
     attributes:
       label: "1. Which file(s) you found a problem?"
       placeholder: Your answer here, following the model below...
-  
+
   - type: markdown
     attributes:
       value: |
@@ -38,7 +38,6 @@ body:
         >
         > - Add a new section called "Contributing" to explain how to contribute to this project
         > ```
-      
 
   - type: textarea
     id: error-correction
@@ -91,10 +90,10 @@ body:
   - type: checkboxes
     id: consent
     attributes:
-      label: '5. Consent:' 
+      label: "5. Consent:"
       options:
         - label: By selecting "Yes" on the item (3) and providing my e-mail on the item (4) of this form, I understand and allow von Schappler to contact me about this case.
-  
+
   - type: markdown
     attributes:
       value: |
@@ -104,7 +103,7 @@ body:
   - type: checkboxes
     id: terms
     attributes:
-      label: '6. Agreement:' 
+      label: "6. Agreement:"
       options:
         - label: I agree that by submitting this report the information listed here are suggestions that aim to improve the application.
           required: true
