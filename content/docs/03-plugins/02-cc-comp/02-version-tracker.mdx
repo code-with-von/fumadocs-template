@@ -1,0 +1,50 @@
+---
+
+title: Version Tracker
+description: A quick guide on how use the Version Tracker
+icon: Rocket
+permission: dev
+
+---
+
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+import {exampleVersion} from '@components/custom/story/version_example.story'
+
+The version tracker component is a small and simple to use component, created to help the **end-users** to understand and track important aspects as:
+
+- Changelogs
+- Different version releases
+- Different reviews
+- Any other aspect of the application documented that relies on version control
+
+
+### 1. Version Tracker props
+
+The Version tracking component uses two simple properties, as listed below:
+
+<TypeTable
+  type={{
+    isCurrent: {
+      description: 'If the referenced version is the current one or not',
+      type: 'boolean'
+    },
+    children: {
+      description: 'The content to be displayed inside the pill component that renders on screen',
+      type: 'string',
+      required: true
+    }
+  }}
+/>
+
+---
+
+### 2. Component preview
+
+Below we have an interactive preview of the Version Tracker component, so it's possible to understand how it works.
+
+<exampleVersion.WithControl />
+
+<Callout type='error' title='IMPORTANT'>
+  It's possible to customize the way this component looks like, but changing the passed styles inside the code of the component!
+</Callout>
+

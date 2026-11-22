@@ -1,0 +1,559 @@
+---
+
+title: CodeBlocks
+description: A quick guide on how to use codeblocks
+icon: Code
+permission: dev
+
+
+---
+
+
+Codeblocks are largely used in documentations when we need to exemplify our pieces of code (aka **code snippets**), and **Fumadocs** provide some nice integrations for allowing us to work with codeblocks.
+
+Not only that - but also, **Fumadocs** provides an integration with **Shiki** and **TwoSlash**[^1] which allows an even deeper level of customization of code.
+
+Below we provide as many different ways of passing any code snippet in documentation.
+
+### 1. Basic code snippet
+
+This is the most basic way of adding snippets to any **MDX** file. Any codeblock should follow the syntax below:
+
+````markdown
+```lang
+your snippet goes here, following the language syntax
+```
+````
+
+From this point ahead, any examples will assume `lang=js | ts` for a more complete set of examples, but most of what's showcased can be done with any other language, because iof **Shiki** support to most common programming languages[^2].
+
+
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+````mdx
+```js
+console.log('Hello World');
+```
+```` 
+</Tab>
+<Tab>
+```js
+console.log('Hello World');
+```
+</Tab>
+</Tabs>
+
+---
+
+### 1. Adding a filename in code snippets
+
+When we wish to be more specific over the specific file where code snippets should be placed, it's possible to add the `title` property after the language used for the file.
+
+
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+````mdx
+```js title='hello.js'
+console.log('Hello World');
+```
+```` 
+</Tab>
+<Tab>
+```js title='hello.js'
+console.log('Hello World');
+```
+</Tab>
+</Tabs>
+
+---
+
+### 1. Displaying details in code snippets (**JavaScript / TypeScript** only)
+
+**Shiki** has some special notations that allows us to provide explanation about the code snippet, if we provide the code snippet as in a similar way as the example below.
+
+#### JavaScript example
+
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+````mdx
+```js twoslash title='hello.js'
+console.log('Hello World');
+//      ^?
+
+console.log('Hello World');
+//  ^?
+```
+```` 
+</Tab>
+<Tab>
+```js twoslash title='hello.js'
+console.log('Hello World');
+//         ^?
+
+console.log('Hello World');
+//    ^?
+```
+</Tab>
+</Tabs>
+
+#### TypeScript example
+
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+````mdx
+```ts twoslash title='hello.ts'
+console.log('Hello World');
+//      ^?
+
+console.log('Hello World');
+//  ^?
+```
+```` 
+</Tab>
+<Tab>
+```ts twoslash title='hello.ts'
+console.log('Hello World');
+//         ^?
+
+console.log('Hello World');
+//    ^?
+```
+</Tab>
+</Tabs>
+
+---
+
+### 1. Code suggestions in code snippets (**JavaScript/TypeScript** only)
+
+**Shiki** also provides a preview of code suggestions for code snippets:
+
+#### JavaScript example
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+````mdx
+```js twoslash title='js_file.js'
+// @noErrors
+console.g
+//       ^|
+
+Math.
+//   ^|
+```
+````  
+</Tab>
+<Tab>
+```js twoslash title='js_file.js'
+// @noErrors
+console.g
+//       ^|
+
+Math.
+//   ^|
+```
+</Tab>
+</Tabs>
+
+#### TypeScript example
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+````mdx
+```ts twoslash title='ts_file.ts'
+// @noErrors
+console.g
+//       ^|
+
+Math.
+//   ^|
+```
+````  
+</Tab>
+<Tab>
+```ts twoslash title='ts_file.ts'
+// @noErrors
+console.g
+//       ^|
+
+Math.
+//   ^|
+```
+</Tab>
+</Tabs>
+
+---
+
+### 1. Values preview code snippets (**JavaScript/TypeScript** only)
+
+Another feature from **Shiki** as the possibility to display typed-based snippets in various ways, either by showing the variable types or their previewing their listed values:
+
+#### JavaScript example
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+````mdx
+```js twoslash title='test.js'
+// hover around the snippet to see details/values previews in pop-ups
+const price = 49.99;
+console.log(price)
+```
+````  
+</Tab>
+<Tab>
+```js twoslash title='test.js'
+// hover around the snippet to see details/values previews in pop-ups
+const price = 49.99;
+console.log(price)
+```
+</Tab>
+</Tabs>
+
+#### TypeScript example
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+````mdx
+```ts twoslash title='test.ts'
+// hover around the snippet to see details/values previews in pop-ups
+const price = 49.99;
+console.log(price)
+```
+````  
+</Tab>
+<Tab>
+```ts twoslash title='test.ts'
+// hover around the snippet to see details/values previews in pop-ups
+const price = 49.99;
+console.log(price)
+```
+</Tab>
+</Tabs>
+
+---
+
+### 1. Type sensitive code snippets, with checks (**JavaScript + JsDoclets/TypeScript** only)
+
+Type sensitive blocks should be used when we desire to specify:
+1. Type definitions for objects, variables, constants or specify the expected type of values passed in a function
+2. Provide a feedback over errors[^3] to list "wrong usage examples" and their expected errors
+
+#### JavaScript + JsDoclets (preferred for documentation)
+
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+````mdx
+```js twoslash title='js_docs_example.js'
+// @filename: js_docs_example.js
+// @ts-check
+// @errors: 2322 2345 2554
+
+/**
+ * @param {number} a - The fist value of the addition
+ * @param {number} b - The second value of the addition
+ * @returns {number} The sum of a and b
+ */
+function add(a,b) {
+  return a + b;
+}
+
+//case a (number, number) - correct use
+add(5, 10);
+
+// case b (number, string) - incorrect use
+add(5, '10');
+
+// case c (string, string) - incorrect use
+add('5', '10');
+
+// case d (string, number) - incorrect use
+add('5', 10);
+
+// case e (params missing) - incorrect use
+add();
+add(1);
+```
+````  
+</Tab>
+<Tab>
+```js twoslash title='js_docs_example.js'
+// @filename: js_docs_example.js
+// @ts-check
+// @errors: 2322 2345 2554
+
+/**
+ * @param {number} a - The fist value of the addition
+ * @param {number} b - The second value of the addition
+ * @returns {number} The sum of a and b
+ */
+function add(a,b) {
+  return a + b;
+}
+
+//case a (number, number) - correct use
+add(5, 10);
+
+// case b (number, string) - incorrect use
+add(5, '10');
+
+// case c (string, string) - incorrect use
+add('5', '10');
+
+// case d (string, number) - incorrect use
+add('5', 10);
+
+// case e (params missing) - incorrect use
+add();
+add(1);
+```
+</Tab>
+</Tabs>
+
+#### Typescript example
+
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+````mdx
+```ts twoslash title='example.ts'
+// @errors: 2322
+
+let x: [string, number]
+
+// @log: case A (string, number) - correct initialization 
+x = ['10', 10]
+
+// @warn: case b (string, string) - incorrect initialization, so displays linting warnings / errors
+x = ['10', '10']
+
+// @warn: case c (number, number) - incorrect initialization, so displays linting warnings / errors
+x = [10, 10]
+
+// @warn: case d (number, string) - incorrect initialization, so displays linting warnings / errors
+x = [10, '10']
+```
+````  
+</Tab>
+<Tab>
+```ts twoslash title='example.ts'
+// @errors: 2322
+
+let x: [string, number]
+
+// @log: case A (string, number) - correct initialization 
+x = ['10', 10]
+
+// @warn: case b (string, string) - incorrect initialization
+x = ['10', '10']
+
+// @warn: case c (number, number) - incorrect initialization
+x = [10, 10]
+
+// @warn: case d (number, string) - incorrect initialization
+x = [10, '10']
+```
+</Tab>
+</Tabs>
+
+---
+
+### 1. Installation scripts
+
+There is a specific **MDX** notation that can be used to list installation scripts for **NodeJs** packages.
+
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+````mdx
+```npm 
+npm install dotenv -D
+```
+````  
+</Tab>
+<Tab>
+```npm 
+npm install dotenv -D
+```
+</Tab>
+</Tabs>
+
+And even though there are other possible uses for **codeblocks**, this section has covered the most common usage for them.
+
+---
+
+### 1. Shiki specific notation
+
+**Shiki** has a set of notations that can be used to further customize the look and feel of codeblocks. The example below showcase a few of those possible notations
+
+
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+````mdx
+```lang
+// this code should be inside block code with a supported language
+// highlight a line
+<div>Hello World</div> // [!code highlight]
+
+// highlight a word
+// [!code word:Fumadocs]
+<div>Fumadocs</div>
+
+// diff styles
+console.log('hewwo'); // [!code --]
+console.log('hello'); // [!code ++]
+
+// focus
+return new ResizeObserver(() => {}) // [!code focus]
+```
+````
+<Callout type='warning' title='NOTE'>
+  You'll not see any formatting here, as if we define a specific formatting the code is not actually displayed, but it's 100% expected on your mdx file for you to see the proper formatting and coloring syntax when the param **lang** is passed on the example above, as displayed in the output, where lang was set to **jsx**!
+</Callout>
+</Tab>
+<Tab>
+```jsx
+// this code should be inside block code with a supported language
+// highlight a line
+<div>Hello World</div> // [!code highlight]
+
+// highlight a word
+// [!code word:Fumadocs]
+<div>Fumadocs</div>
+
+// diff styles
+console.log('hewwo'); // [!code --]
+console.log('hello'); // [!code ++]
+
+// focus
+return new ResizeObserver(() => {}) // [!code focus]
+```
+</Tab>
+</Tabs>
+
+--- 
+
+### 1. Other supported languages
+
+#### Python
+
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+````mdx
+``` py title='main.py'
+def main(_self):
+  print('Helo from main!')
+  return
+
+main()
+```
+````
+</Tab>
+<Tab>
+``` py title='main.py'
+def main(_self):
+  print('Helo from main!')
+  return
+
+main()
+```
+</Tab>
+</Tabs>
+
+#### HTML
+
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+````mdx
+```html title='index.html'
+<html>
+  <div>
+    <p>
+      Something inside a paragraph element
+    </p>
+  </div>
+</html>
+```
+````
+</Tab>
+<Tab>
+```html title='index.html'
+<html>
+  <div>
+    <p>
+      Something inside a paragraph element
+    </p>
+  </div>
+</html>
+```
+</Tab>
+</Tabs>
+
+#### CSS / TailwindCSS
+
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+````mdx
+```css title='index.css'
+#root {
+  background-color: red;
+  & .blue {
+    @apply bg-blue-400;
+  }
+}
+```
+````
+</Tab>
+<Tab>
+```css title='index.css'
+#root {
+  background-color: red;
+  & .blue {
+    @apply bg-blue-400;
+  }
+}
+```
+</Tab>
+</Tabs>
+
+#### SQL
+
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+````mdx
+```sql title='users.sql'
+CREATE TABLE users (
+    name VARCHAR(100),
+    age INT
+);
+
+INSERT INTO users (name, age) VALUES 
+('Alice', 25), 
+('Bob', 30);
+
+```
+````
+</Tab>
+<Tab>
+```sql title='users.sql'
+CREATE TABLE users (
+  name VARCHAR(100),
+  age INT
+);
+
+INSERT INTO users (name, age) VALUES 
+('Alice', 25), 
+('Bob', 30);
+
+```
+</Tab>
+</Tabs>
+
+## What is next? [!toc]
+
+<Cards>
+<Card href='https://shiki.style/'>
+  Check **Shiki** notation syntax
+</Card>
+<Card href='https://twoslash.netlify.app/refs/notations'>
+  Check **TwoSlash** notation syntax
+</Card>
+</Cards>
+
+---
+
+[^1]: From this point, every time we mention **Shiki**, understand as the composition between **Shiki** and **TwoSlash** as we are using both libraries in junction as a single installation / package, in order to provide the desired behavior.
+[^2]: Even though **Shiki** provides support for the most common programming languages, in this project we had pre-defined which languages should be supported. If for any reason we need additional support for other languages, the file `source.config.ts` needs to be updated properly for other programming languages.
+[^3]: Errors feedback depends on a `@errors` clause added to the code snippet - on [TwoSlash documentation](https://twoslash.netlify.app/guide/) it's possible to have the list of the errors that can be used for this purpose

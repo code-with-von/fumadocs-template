@@ -1,0 +1,69 @@
+---
+
+title: Main application layout
+icon: PanelsTopLeft
+
+---
+
+The main application layout is defined by the file **app/layout.tsx** and this file **wraps your whole Fumadocs application**. 
+
+Any and all Next.js application has this file, as in this file is where some global imports and definitions are done.
+
+In this file, the most important section to pay attention is the one from the snippet below:
+
+```tsx title='app/layout.tsx'
+// other page imports
+
+// the base font for the page, provided by the package next/font/google //[!code focus]
+import { Inter } from "next/font/google"; //[!code focus]
+
+const inter = Inter({ //[!code focus]
+  subsets: ["latin"], //[!code focus]
+}); //[!code focus]
+
+// the metadata of the application (equivalent to the <meta> will be rendered as the <meta> HTML tag) //[!code focus]
+export const metadata = { //[!code focus]
+  title: "Fumadocs base Template", //[!code focus]
+  description: //[!code focus]
+    "A base Fumadocs template created for free, so developers and use as inspiration for their Fumadocs application.", //[!code focus]
+}; //[!code focus]
+
+const RootLayout = ({ children }: LayoutProps<"/">) => {
+  return (
+    <html lang="en" className={inter.className} suppressHydrationWarning>
+      <head>
+
+        // [!code focus]
+        {/* edit this if you are using a different icon file */}
+        // [!code focus]
+        <link rel="icon" href="/icon.png" sizes="any" /> 
+      </head>
+        
+      // [!code focus]
+      {/* edit this to your needs / branding */}
+      // [!code focus]
+      <body className="dark flex min-h-screen flex-col bg-linear-65 from-von-black/15 via-von-gray/15 to-90%' to-von-black/15 text-white antialiased selection:bg-von-white/10 selection:text-von-teal/75">
+      
+        // [!code focus]
+        {/* edit this to your needs / branding */}
+        <RootProvider
+          theme={{ // [!code focus]
+            defaultTheme: "dark", // [!code focus]
+            enabled: true, // [!code focus]
+            enableColorScheme: true, // [!code focus]
+          }}// [!code focus] 
+        >
+          {children}
+        </RootProvider>
+      </body>
+    </html>
+  );
+};
+export default RootLayout;
+
+```
+
+<Callout title='NOTE' >
+  Even though other sections of the file are not highlighted to be changed, you can change them at your needs. The highlighted zones are only listing the most important sections that really need to be changed
+</Callout>
+

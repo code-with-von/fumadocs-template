@@ -1,0 +1,76 @@
+---
+
+title: Tables with types
+description: A quick guide on how to add tables for type listing on this project
+icon: Table
+permission: dev
+
+---
+
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+Tables with types are good to specify functions params and their expected types. This provides a good insight over what kind of params we are expecting in functions and which type of data we should provide to them so they work properly.
+
+In this project we have two different components that work for this purpose, as listed below:
+
+### 1. AutoTypeTable component
+
+This is a simpler implementation of tables with types. The component responsible for rendering this type of table just require a simple `json` string  as the type parameter passes into it, as in the example below.
+
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+  ````mdx
+  <AutoTypeTable type="{ name: string, age?: number }" />
+  ````
+</Tab>
+<Tab>
+  <AutoTypeTable type="{ name: string, age?: number }" />
+</Tab>
+</Tabs>
+
+---
+
+### 2. TypeTable component
+
+This is a simpler implementation of tables with types. The component responsible for rendering this type of table just require a simple `json` string  as the type parameter passes into it, as in the example below.
+
+<Tabs items={['MDX', 'Output']}>
+<Tab>
+  ````mdx
+  import { TypeTable } from 'fumadocs-ui/components/type-table';
+    
+  <TypeTable
+    type={{
+      percentage: {
+        description: 'The percentage of scroll position to display the roll button',
+        type: 'number',
+        default: 0.2,
+        required: true
+      },
+      users: {
+        description: 'The number of users that answered the query',
+        type: 'number | undefined'
+      },
+    }}
+    
+  />
+  ````
+</Tab>
+<Tab>
+  <TypeTable
+    type={{
+      percentage: {
+        description: 'The percentage of scroll position to display the roll button',
+        type: 'number',
+        default: 0.2,
+        required: true
+      },
+      users: {
+        description: 'The number of users that answered the query',
+        type: 'number',
+      },
+    }}
+  />
+</Tab>
+</Tabs>
+

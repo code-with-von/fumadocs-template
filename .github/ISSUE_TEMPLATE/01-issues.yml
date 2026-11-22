@@ -1,0 +1,88 @@
+name: Report problems found with this project
+description: I found a problem in the current project, that impacted on using it as expected
+title: "[Issue]: Issue name"
+assignees:
+  - vonschappler
+labels:
+  - issue
+  - triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > Use this form to provide details about the issue you found in this project.
+
+  - type: dropdown
+    id: issue-type
+    validations:
+      required: true
+    attributes:
+      label: "1. Issue type:"
+    options:
+      - "Broken link"
+      - "Project seems outdated"
+      - "Other / not listed"
+
+  - type: textarea
+    id: issue-details
+    validations:
+      required: true
+    attributes:
+      label: "2. Issue details:"
+      placeholder: |
+        Please provide as much details as possible about the issue, following the request example below.
+
+  - type: markdown
+    attributes:
+      value: |
+        > Issue report example:
+        >
+        > ```md
+        > Please provide as much detail as possible, including:
+        > - Details of your working environment
+        > - Steps to reproduce the issue
+        > - Examples/Screenshots/Screen records of the issue
+        > - Suggestions about the fix (optional)
+        > ```
+
+  - type: dropdown
+    id: contact
+    attributes:
+      description: Let us know if you want to be contacted directly about the progress of work into this.
+      label: "3. Do you want to be contacted about this issue?"
+      options:
+        - "No"
+        - "Yes"
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: email
+    attributes:
+      label: "4. Email:"
+      description: If you select "Yes" above, please provide your email address so that we can contact you about this issue.
+      placeholder: myemail@example.com
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: "5. Consentient:"
+      options:
+        - label: By selecting "Yes" and providing my e-mail, I understand that the developer won't be using it for any other purposes than contacting me about this issue.
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## Terms:
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "6. Agreement:"
+      options:
+        - label: I agree that by submitting this report the information listed here are suggestions that aim to improve the application.
+          required: true
+        - label: I understand that my request may take some time to be attended, and the proposal for improvements I suggested may not be accepted, hence not applied to the application.
+          required: true

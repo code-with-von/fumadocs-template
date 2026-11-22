@@ -1,0 +1,6 @@
+{
+  "title": "Navigation preview",
+  "icon": "Eye",
+
+  "pages": ["03-hidden", "02-file-b", "index", "..."]
+}

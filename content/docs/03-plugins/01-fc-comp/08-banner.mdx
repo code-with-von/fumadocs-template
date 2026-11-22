@@ -1,0 +1,72 @@
+---
+
+title: Banner
+description: A quick guide how to use the banner
+icon: Flag
+permission: dev
+
+---
+
+import { Banner } from "fumadocs-ui/components/banner";
+
+The banner shows a pop-up (**which can be closed based on the use case / definitions**), placed where the user defines it.
+
+This component should not be used inside **MDX** files existent inside at **/content/docs** folder, as this can cause unexpected behavior, as this is this a component created mainly to be used in **layouts** or **pages** files.
+
+<Callout type='error' title='IMPORTANT'>
+
+As the **this** component was added here only as a reference (and most of the times not used in this project/template), it's **strongly advised** to read the [official documentation](https://www.fumadocs.dev/docs/ui/components/banner) before using it, as in here were won't be providing any additional information except on **how to implement it**.
+</Callout>
+
+## 1. Recommended use-cases
+
+- Notify users about important updates or changes
+- Alert users about upcoming maintenance or downtime
+- Promote new features or products
+- Display important announcements or news
+
+## 2. Adding banners into the project
+
+As pointed above, a **banner** should always be added inside some specific files.
+
+The example below showcases the **implementation** of a banner inside the main project layout file. To add it in other files, the same approach can be used.
+
+<Tabs items={["Always visible", "Closable"]}>
+
+<Tab>
+```jsx title='your_jsx_or_tsx_file.jsx'
+// other imports come here
+import { Banner } from "fumadocs-ui/components/banner";
+
+export default function Your_JSX__OR_TSX_REACT_COMPONENT({ children }) {
+  return (
+    <>
+      <Banner>Hello World</Banner>
+      {/* your jsx code here*/}
+    </>
+  );
+}
+```
+</Tab>
+
+<Tab>
+```jsx title='your_jsx_or_tsx_file.jsx'
+// other imports come here
+import { Banner } from "fumadocs-ui/components/banner";
+
+export default function Your_JSX__OR_TSX_REACT_COMPONENT({ children }) {
+  return (
+    <>
+      <Banner id="hello-world">Hello World</Banner>
+      {/* your jsx code here*/}
+    </>
+  );
+}
+```
+</Tab>
+</Tabs>
+
+
+
+
+The expected result of this implementation can be previewed already in [our main page](/).

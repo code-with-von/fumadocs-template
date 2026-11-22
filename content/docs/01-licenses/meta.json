@@ -1,0 +1,7 @@
+{
+  "title": "Project Licenses",
+  "icon": "Scale",
+  "defaultOpen": false,
+  "collapsible": true,
+  "pages": ["index", "01-eula", "02-gnu"]
+}

@@ -1,0 +1,32 @@
+{
+  "autorun": true,
+  "terminals": [
+    {
+      "name": "installs",
+      "description": "Runs a terminal for installing packages / dependencies",
+      "focus": false,
+      "icon": "package", // An icon to show next to the name, ref: https://code.visualstudio.com/api/references/icons-in-labels#icon-listing
+      "color": "terminal.ansiRed"
+    },
+    {
+      "name": "sever-dev",
+      "description": "Runs a terminal for development at port 5000",
+      "focus": true,
+      "command": "pnpm inf:dev",
+      "icon": "server", // An icon to show next to the name, ref: https://code.visualstudio.com/api/references/icons-in-labels#icon-listing
+      "color": "terminal.ansiCyan"
+    },
+    {
+      "name": "server-prod",
+      "focus": false,
+      "icon": "server", // An icon to show next to the name, ref: https://code.visualstudio.com/api/references/icons-in-labels#icon-listing
+      "color": "terminal.ansiGreen"
+    },
+    {
+      "name": "git-commands",
+      "focus": false,
+      "icon": "github", // An icon to show next to the name, ref: https://code.visualstudio.com/api/references/icons-in-labels#icon-listing
+      "color": "terminal.ansiYellow"
+    }
+  ]
+}
